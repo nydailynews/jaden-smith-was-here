@@ -129,40 +129,63 @@
         </div>
         <p id="datestamp" class="stamp">Published July 7, 2018</p>
 
-	<form id="interface" action="#" method="GET">
 		<p>Give us your birth month and day and we’ll give you which Jaden Smith tweet most represents you.</p>
-        <p>
-            <label for="month">Birth month</label>
-            <select id="birth-month">
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-            </select>
-        </p>
-        <p>
-            <label for="month">Birth day</label>
-            <input type="number" min="1" max="31" id="birth-day">
-        </p>
-		<button onClick="jdn.make();" id="make">Submit</button>
-		<button onClick="jdn.save();" id="save">Save</button>
-	</form>
+        <form id="interface" action="#" method="GET">
+            <p>
+                <label for="month">Birth month</label>
+                <select id="birth-month">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </p>
+            <p>
+                <label for="month">Birth day</label>
+                <input type="number" min="1" max="31" id="birth-day">
+            </p>
+            <button onClick="jdn.make();" id="make">Submit</button>
+            <button onClick="jdn.save();" id="save">Save</button>
+        </form>
 
-    <section id="stage">
+        <section id="stage" class="hide">
 
-    </section>
+        </section>
 
 
     </article>
 </main>
+<style>
+body {
+    background-color: white;
+}
+main {
+    background-color: rgb(180,180,180);
+    max-width: 1024px;
+    margin: auto;
+    padding: 25px;
+}
+form {
+    max-width: 300px;
+    margin: auto;
+}
+form p {
+    float: left;
+    margin-right: 10px;
+}
+
+#stage {
+    border: 4px solid #81bbf7;
+}
+</style>
 <script>
 var jdn = {
     config: {
