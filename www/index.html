@@ -122,8 +122,8 @@
 
 	<form id="interface">
         <p>
-            <label for="month">Month</label>
-            <select>
+            <label for="month">Birth month</label>
+            <select id="birth-month">
                 <option value="01">January</option>
                 <option value="02">February</option>
                 <option value="03">March</option>
@@ -137,6 +137,10 @@
                 <option value="11">November</option>
                 <option value="12">December</option>
             </select>
+        </p>
+        <p>
+            <label for="month">Birth day</label>
+            <input type="number" min="1" max="31" id="birth-day">
         </p>
 	</form>
 <section id="stage">
