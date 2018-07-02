@@ -110,6 +110,14 @@
 <!-- CONTENT-START -->
 <main>
     <article>
+		<div id="dek"></div>
+		<h1></h1>
+
+		<ul class="ra-share" id="ra-share-top">
+			<li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
+			<li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=&url=&related=nydni,">Tweet</a></li>
+			<li class="ra-share-e"> <a href="mailto:?subject=Game of Thrones house motto generator&body=http://interactive.nydailynews.com/project/game-of-thrones-house/">email</a> </li>
+		</ul>
         <div>
     
   <div class="ad center">
@@ -120,7 +128,8 @@
     </div>
   </div>
 
-	<form id="interface">
+	<form id="interface" action="#" method="GET">
+		<p>Give us your birth month and day and we’ll give you which Jaden Smith tweet most represents you.</p>
         <p>
             <label for="month">Birth month</label>
             <select id="birth-month">
@@ -142,10 +151,13 @@
             <label for="month">Birth day</label>
             <input type="number" min="1" max="31" id="birth-day">
         </p>
+		<button onClick="jdn.make();" id="make">Submit</button>
+		<button onClick="jdn.save();" id="save">Save</button>
 	</form>
-<section id="stage">
 
-</section>
+    <section id="stage">
+
+    </section>
 
 
         </div>
@@ -165,6 +177,10 @@ var jdn = {
             }
         }
         return true;
+    },
+	make: function() {
+    },
+    save: function() {
     },
     init: {
     }
