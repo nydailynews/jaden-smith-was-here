@@ -43,10 +43,10 @@
             "headline": "TITLE",
             "url": "CANONICAL",
             "thumbnailUrl": "CANONICALimg/share.png",
-            "dateCreated": "2018-07-12T06:00:00Z",
+            "dateCreated": "2018-07-06T06:00:00Z",
             "articleSection": "Interactive",
-            "creator": ["Reporter Name", "Interactive Project"],
-            "keywords": ["interactive project","interactive"]
+            "creator": ["Interactive Project", "Chase Gaewski", "Joe Murphy", "Spencer Dukoff"],
+            "keywords": ["interactive project","interactive","jaden smith"]
         }
     </script>
 
@@ -67,8 +67,6 @@
     <meta name="localeCountry" content="US"/>
     <meta name="localeLanguage" content="en" />
 
-    <!-- ADOBE ANALYTICS -->
-    <script src="//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js"></script>
     <link rel="stylesheet" href="//interactive.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/style.css">
@@ -177,6 +175,9 @@ main {
     margin: auto;
     padding: 25px;
 }
+article {
+    background-color: rgb(180,180,180);
+}
 form {
     max-width: 300px;
     margin: auto;
@@ -189,8 +190,12 @@ form p {
 input, select {
     border: 2px solid #999;
 }
+button { 
+    margin: 5px;
+}
 #stage {
     border: 4px solid #81bbf7;
+    background-color: white;
 }
 #stage img {
     width: 200px;
@@ -276,10 +281,10 @@ var jdn = {
         ],
     make: function(index) {
         var md = +(document.getElementById('birth-month').value + document.getElementById('birth-day').value);
-        if ( index !== null ) md = index;
+        if ( index !== undefined ) md = index;
         var quote_index = md % this.config.quote_l;
         var img_index = ( md % this.config.img_l ) + 1;
-        console.log(md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
+        console.log(index, typeof index, md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
 
         document.getElementById('stage').setAttribute('class', '');
         document.getElementById('save').setAttribute('class', '');
@@ -293,7 +298,10 @@ var jdn = {
     save: function() {
     },
     rando: function() {
-        this.make(Math.floor(Math.random() * this.config.quote_l));
+        var m = Math.floor(Math.random() * 11) + 1;
+        var d = Math.floor(Math.random() * 30) + 1;
+        if ( d < 10 ) d = "0" + d;
+        this.make("" + m + d);
     },
     init: function() {
         this.config.quote_l = this.data.length - 1;
