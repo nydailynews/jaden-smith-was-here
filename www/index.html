@@ -189,6 +189,8 @@ form p {
 <script>
 var jdn = {
     config: {
+        quote_l: 0,
+        img_l: 5,
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -201,11 +203,61 @@ var jdn = {
         }
         return true;
     },
-    make: function() {
+    data: [
+        "Ocean 8 Is Fire.",
+        "The Biggest Flex Anyone will Ever Have Is Dying.",
+        "The Moment That Truth Is Organized It Becomes A Lie.",
+        "Just Stare In The Mirror And Cry And You'll Be Good,
+        "The More Time You Spend Awake The More Time You Spend Asleep.",
+        "Every 7 Years Your Body Is Completely Replaced With Entirely New Cells So Just Because You Look The Same Doesn't Mean You Are.",
+        "How Can Mirrors Be Real If Our Eyes Aren't Real",
+        "Ohh So I Have To Manage My Emotions And Yours... Great",
+        "I Am Not A Human And I Don't Speak English",
+        "Teleport To Me.",
+        "I Don't Hate Anything Accept For Monsanto.",
+        "Do Not Ask Me For A Picture Unless Your Camera Is Ready And On Selfie Mode.",
+        "I Just Scrolled Through My Tweets And "I" Started Laughing.",
+        "The Head Of The Sphinx Will Fall Off In The Near Future.",
+        "I Don't Want You Guys To Think Because I Was Born In America That I Speak And Abide By English Grammar. I Speak Jaden, Indefinetly.",
+        "I've Bin Drinking Distilled Water For So Long That When I Drink Normal Water It Feels Like I'm Swallowing Huge Chunks of Aluminum.",
+        "No Pain No Gain Young Kurt Cobain.",
+        "Hate Me Love Me Doesn't Matter I'm Still Occupying Time Inside Of Your Psyche.",
+        "You Can Discover Everything You Need To Know About Everything By Looking At Your Hands",
+        "You Do Not Know Who You Are Or Why Your Here So When You See Someone Who Dose The Society Comes Together As A Whole and Destroys Them.",
+        "School=Depression. Learning+Creation = Happiness. Happiness=Art. Art=Intelligence. Intelligence=Rebellion. And Rebellion Is Bad For The",
+        "Most Trees Are Blue",
+        "Look Me In The Eyes, Then Look At My Pants, Then Look Me In The Eyes Again, And Ask Me That Question One More Time.",
+        "Only Things That Keeps Me Going Is Knowing That Eventually Both Of Us Will Die.",
+        "Here's The Deal, I Am Chris Pratt.",
+        "One Time I Went To The, And Then I Dropped The Needle On The Record Industrial Complex For The 5th Time This Month While I Bathed In Sorbet",
+        "I Don't Smell Good, But I Don't Smell Bad You Feel Me.",
+        "Dying Is MainStream #MONEY",
+        "That Moment When Peeing Feels So Good You Start Crying.",
+        "Instagram Is Not The Answer",
+        "Shia Labeouf Is Life.",
+        "Don't Argue With Anybody About What Color The Sky Is.",
+        "If It's Lit, It's Truly Lit",
+        "There Is No Nutrients In Our Food Anymore Or In Our Soil OR IN OUR WATER.",
+        "I Should Just Stop Tweeting, The Human Consciousness Must Raise Before I Speak My Juvenile Philosophy.",
+        "If A Book Store Never Runs Out Of A Certain Book, Dose That Mean That Nobody Reads It, Or Everybody Reads It",
+        "“It's Your Birthday” Mateo Said. I Didn't Respond. “Are You Not Excited To Be 15” He Asked. Readying My Book I Uttered “I Turned 15 Long Ago”",
+        "I Saw Owen Wilson One Time From A Distance And We Just Stared At Each Other, Then His Car Drove Off.",
+        "If A Cup Cake Falls From a Tree How Far Away Will It Be From Down #Jupiter",
+        "Water In The Eyes And Alcohol In The Eyes Are Pretty Much The Same I Know This From First Hand Experience.",
+        "The Great Gatsby Is One Of The Greatest Movies Of All Time, Coachella.",
+        "Umm Who Has The Floss",
+        "Lately People Call Me Scoop Life",
+        "I Just Like Showing Pretty Girls A Good Time Weather I'm Physically There Or Not Doesn't Matter.",
+        "I'm Glad That Our Distance Makes Us Witness Ourselves From A Different Entrance.",
+        "Females Are Amazing.",
+        ],
+    make: function(ele) {
+        console.log(ele);
     },
     save: function() {
     },
     init: {
+        this.config.quote_l = this.data.length;
     }
 };
 // UTILS
