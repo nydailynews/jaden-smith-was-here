@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="//interactive.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://interactive.nydailynews.com/quiz/css/style-howmany-v2.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700|PT+Serif" rel="stylesheet">
     <script data-main="//interactive.nydailynews.com/nydn/js/rh.js?r=20170405001" src="//www.nydailynews.com/nydn/js/require.js?r=2016LIST" defer></script>
       
@@ -132,7 +133,7 @@
 		<p>Give us your birth month and day and we’ll give you which Jaden Smith tweet most represents you.</p>
         <form id="interface" action="#" method="GET">
             <p>
-                <label for="month">Birth month</label>
+                <label for="birth-month">Birth month</label>
                 <select id="birth-month">
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -149,9 +150,10 @@
                 </select>
             </p>
             <p>
-                <label for="month">Birth day</label>
+                <label for="birth-day">Birth day</label>
                 <input type="number" min="1" max="31" id="birth-day">
             </p>
+            <div style="clear:both;"></div>
             <button onClick="jdn.make();" id="make">Submit</button>
             <button onClick="jdn.save();" id="save">Save</button>
         </form>
@@ -182,6 +184,9 @@ form p {
     margin-right: 10px;
 }
 
+input, select {
+    border: 2px solid #999;
+}
 #stage {
     border: 4px solid #81bbf7;
 }
@@ -207,7 +212,7 @@ var jdn = {
         "Ocean 8 Is Fire.",
         "The Biggest Flex Anyone will Ever Have Is Dying.",
         "The Moment That Truth Is Organized It Becomes A Lie.",
-        "Just Stare In The Mirror And Cry And You'll Be Good,
+        "Just Stare In The Mirror And Cry And You'll Be Good",
         "The More Time You Spend Awake The More Time You Spend Asleep.",
         "Every 7 Years Your Body Is Completely Replaced With Entirely New Cells So Just Because You Look The Same Doesn't Mean You Are.",
         "How Can Mirrors Be Real If Our Eyes Aren't Real",
@@ -216,7 +221,7 @@ var jdn = {
         "Teleport To Me.",
         "I Don't Hate Anything Accept For Monsanto.",
         "Do Not Ask Me For A Picture Unless Your Camera Is Ready And On Selfie Mode.",
-        "I Just Scrolled Through My Tweets And "I" Started Laughing.",
+        "I Just Scrolled Through My Tweets And “I” Started Laughing.",
         "The Head Of The Sphinx Will Fall Off In The Near Future.",
         "I Don't Want You Guys To Think Because I Was Born In America That I Speak And Abide By English Grammar. I Speak Jaden, Indefinetly.",
         "I've Bin Drinking Distilled Water For So Long That When I Drink Normal Water It Feels Like I'm Swallowing Huge Chunks of Aluminum.",
@@ -252,11 +257,12 @@ var jdn = {
         "Females Are Amazing.",
         ],
     make: function(ele) {
-        console.log(ele);
+        var md = +(document.getElementById('birth-month').value + document.getElementById('birth-day').value);
+
     },
     save: function() {
     },
-    init: {
+    init: function() {
         this.config.quote_l = this.data.length;
     }
 };
