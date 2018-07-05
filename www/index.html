@@ -158,8 +158,8 @@
         </form>
 
         <section id="stage" class="hide">
-            <blockquote id="quoted"></blockquote>
             <img id="jaden-smith" alt="A photo of Jaden Smith">
+            <blockquote id="quoted"></blockquote>
         </section>
 
 
@@ -170,13 +170,13 @@ body {
     background-color: white;
 }
 main {
-    background-color: rgb(180,180,180);
-    max-width: 1024px;
+    background-color: white;
+}
+body#nydailynews article {
+    background-color: rgb(215,215,215);
+    max-width: 824px;
     margin: auto;
     padding: 25px;
-}
-article {
-    background-color: rgb(180,180,180);
 }
 article p {
     font-family: "Open Sans", sans-serif;
@@ -184,6 +184,7 @@ article p {
 article h1, #stage blockquote {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: bold;
+    letter-spacing: 0;
 }
 form {
     max-width: 300px;
@@ -203,29 +204,41 @@ button {
 #stage {
     border: 4px solid #81bbf7;
     background-color: white;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr;
+    align-content: space-evenly;
 }
 #stage img {
     width: 200px;
     position: relative;
-    top: -100px;
+    left: -20px;
 }
 #stage blockquote:before {
     content: "“";
+    color: #81bbf7;
+    position: absolute;
+    font-size: 192px;
+    margin-top: -5px;
+    margin-left: 50px;
 }
 #stage blockquote {
     color: black;
-    position: relative;
-    left: 200px;
     font-size: 48px;
     line-height: 40px;
-    width: 600px;
+    width: calc(100% - 40px);
+	margin-left: 20px;
+	margin-top: 100px;
+}
+.hide {
+	display: none;
 }
 </style>
 <script>
 var jdn = {
     config: {
-        quote_l: 0,
-        img_l: 5,
+        quote_l: 0, // How many items are in the quote list
+        img_l: 5,   // How many items are in the image list
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -310,7 +323,7 @@ var jdn = {
         if ( d < 10 ) d = "0" + d;
         this.make("" + m + d);
     },
-    init: function() {
+    init: function(config) {
         this.config.quote_l = this.data.length - 1;
     }
 };
