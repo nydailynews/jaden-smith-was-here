@@ -19,7 +19,14 @@ var markov = {
         }
 
         // Sometimes the last word is "of." That definitely makes no sense.
-        if ( title[title.length - 1] === 'of' ) title.splice(-1, 1);
+        console.log(title);
+        if ( title[title.length - 1] === 'Of' ) title.splice(-1, 1);
+        if ( title[title.length - 1] === 'The' ) {
+            if ( title[title.length - 2] === 'In' || title[title.length - 2] === 'For' ) {
+                title.splice(-1, 1);
+                title.splice(-1, 1);
+            }
+        }
 
         if (title.length < min) return this.make_title(min, max);
         if (title.length > max) return this.make_title(min, max);
@@ -29,9 +36,9 @@ var markov = {
     load_title: function() {
         var floor = 4;
         var min = floor + Math.floor(2 * Math.random());
-        var max = min + Math.floor(8 * Math.random());
+        var max = min + Math.floor(10 * Math.random());
         var title = this.make_title(min, max);
-        document.getElementById('quoted').textContent = title;
+        document.getElementById('quoted').innerHTML = title + '<span>*</span>';
         return title;
     },
     init: function() {

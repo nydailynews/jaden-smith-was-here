@@ -202,7 +202,10 @@
         </p>
         <section id="stage" class="hide">
             <img id="jaden-smith" alt="A photo of Jaden Smith">
-            <blockquote id="quoted"></blockquote>
+            <div>
+                <blockquote id="quoted"></blockquote>
+                <p id="asterisk" class="hide"><span>*</span> Jaden didn't actually write this</p>
+            </div>
         </section>
         <div class="buttons">
             <button onClick="jdn.save();" id="save" class="hide">Save</button>
@@ -368,6 +371,14 @@ button:focus:before, button:focus:after {
     margin: 80px 0 40px 60px;
     padding: 10px 0;
 }
+#stage blockquote span, #stage p span {
+    color: red;
+    font-size: 60px;
+}
+#stage p span { font-size: 30px; }
+#stage p {
+    text-align: right;
+}
 .hide {
     display: none;
 }
@@ -488,6 +499,7 @@ var jdn = {
         document.getElementById('rando').setAttribute('class', '');
         document.getElementById('truly_rando').setAttribute('class', '');
         document.getElementById('blurb').setAttribute('class', '');
+        document.getElementById('asterisk').setAttribute('class', 'hide');
 
         this.set_signs('' + index);
 
@@ -526,6 +538,7 @@ var jdn = {
         this.make("" + m + d);
     },
     truly_rando: function() {
+        document.getElementById('asterisk').setAttribute('class', '');
         markov.load_title();
     },
     cell_length: 5 * 1000,
