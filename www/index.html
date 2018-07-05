@@ -121,7 +121,7 @@
     
         <p id="datestamp" class="stamp">Published July 7, 2018</p>
 
-		<p>Give us your birth month and day and we’ll give you which Jaden Smith tweet most represents you.</p>
+		<p>Give us your birth month and day and we’ll give you the Jaden Smith tweet that most represents you.</p>
         <form id="interface" action="#" method="GET" onSubmit="return false;">
             <p>
                 <label for="birth-month">Birth month</label>
@@ -178,6 +178,26 @@ body#nydailynews article {
     max-width: 824px;
     margin: auto;
     padding: 25px;
+}
+body#nydailynews article:before {
+	background: url('img/jaden-smith-2019.png') no-repeat left bottom;
+	background-size: 300px auto;
+	width: calc(100% - 424px);
+	width: 300px;
+	height: 600px;
+	content: " ";
+	position: absolute;
+	left: 50px;
+}
+body#nydailynews article:after {
+	background: url('img/jaden-smith-2018.png') no-repeat right bottom;
+	background-size: 300px auto;
+	width: 300px;
+	height: 600px;
+	content: " ";
+	position: absolute;
+	right: 50px;
+	top: 0;
 }
 article p {
     font-family: "Open Sans", sans-serif;
