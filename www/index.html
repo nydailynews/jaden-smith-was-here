@@ -313,9 +313,23 @@ input, select {
 button { 
     margin: 5px;
 }
+button:hover { 
+    background-color: #81bbf7;
+}
+button:focus { 
+    background-color: #933400;
+}
 button:before, button:after { 
     content: " - ";
     color: #136DF8;
+}
+button:hover:before, button:hover:after { 
+    content: " - ";
+    color: #81bbf7;
+}
+button:focus:before, button:focus:after { 
+    content: " - ";
+    color: #933400;
 }
 .grid {
     display: grid;
@@ -419,20 +433,30 @@ var jdn = {
         "Females Are Amazing.",
         ],
     make: function(index) {
+        
         var md = +(document.getElementById('birth-month').value + document.getElementById('birth-day').value);
         if ( index !== undefined ) md = index;
+        else var index = document.getElementById('birth-month').value + document.getElementById('birth-day').value;
+
         var quote_index = md % this.config.quote_l;
+        var qt = document.getElementById('quoted');
+        qt.textContent = this.data[quote_index];
+
         var img_index = ( md % this.config.img_l ) + 1;
+        var img = document.getElementById('jaden-smith');
+        img.setAttribute('src', 'img/jaden-smith-' + img_index + '.png');
+
         console.log(index, typeof index, md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
 
         document.getElementById('stage').setAttribute('class', 'grid');
         document.getElementById('save').setAttribute('class', '');
         document.getElementById('rando').setAttribute('class', '');
-        var img = document.getElementById('jaden-smith');
-        var qt = document.getElementById('quoted');
-        qt.textContent = this.data[quote_index];
-        img.setAttribute('src', 'img/jaden-smith-' + img_index + '.png');
+        document.getElementById('truly_rando').setAttribute('class', '');
+        document.getElementById('blurb').setAttribute('class', '');
 
+        var t = document.getElementById('stage').offsetTop;
+        window.scrollTo({top: t, behavior: 'smooth' });
+        window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
     },
     save: function() {
         html2canvas($('#stage'), {
@@ -454,8 +478,7 @@ var jdn = {
                 $('#download-'+filename).trigger('click');
                 window.location.reload(true);
 
-                $('#url').addClass('hide');
-                $('#card').removeClass('black');
+                //$('#url').addClass('hide');
             }
         });
     },
@@ -464,6 +487,9 @@ var jdn = {
         var d = Math.floor(Math.random() * 30) + 1;
         if ( d < 10 ) d = "0" + d;
         this.make("" + m + d);
+    },
+    truly_rando: function() {
+        markov.load_title();
     },
     cell_length: 5 * 1000,
     trippy: function() {
@@ -491,13 +517,23 @@ var jdn = {
             );
         console.log("TRIPPY");
     },
+    load_permalink: function(birthday) {
+        // Load a saved image.
+        if ( +birthday < 1000 ) {
+            // birthday will be a string that looks something like "0321" or "1001" or maybe "506".
+            // The last two characters are the date, the other character(s) is the month.
+            this.make(+birthday);
+            //var d = birthday.substr(-2);
+            //var m = birthday.replace(d, '');
+        }
+    },
     init: function(config) {
         this.config.quote_l = this.data.length - 1;
         //this.trippy_interval = window.setInterval(this.trippy(), 1 * jdn.cell_length);
         this.trippy();
         window.setInterval(this.trippy, 20000);
 
-        if ( document.location.hash !== '' ) this.load_permalink(document.location.hash);
+        if ( document.location.hash !== '' ) this.load_permalink(document.location.hash.substr(1));
         if ( document.location.search !== '' ) this.load_permalink(document.location.search.replace('quote=',''));
     }
 };
