@@ -197,7 +197,8 @@
         </div>
 
         <p id="blurb" class="hide">
-            You are a aries in your sun sign and a virgo in your moon sign and this is the tweet that is definitely your life from now on.
+            You are a<span id="n"></span> <span id="sun-sign" class="sign">aries</span> in your sun sign and a <span id="moon-sign" class="sign">virgo<span> in your moon sign
+            and this is the tweet that is definitely your life from now on:
         </p>
         <section id="stage" class="hide">
             <img id="jaden-smith" alt="A photo of Jaden Smith">
@@ -248,7 +249,7 @@ main.color:after {
     filter: hue-rotate(160deg);
 }
 body#nydailynews article {
-    background-color: rgb(253,253,253);
+    background-color: rgb(251,251,251);
     max-width: 824px;
     margin: auto;
     padding-bottom: 500px;
@@ -276,6 +277,10 @@ body#nydailynews article:after {
 }
 article p {
     font-family: "Open Sans", sans-serif;
+}
+article > p {
+    margin-left: 25px;
+    margin-right: 25px;
 }
 article h1 {
     margin: auto;
@@ -306,7 +311,7 @@ input, select {
     border: 2px solid #999;
 }
 .buttons {
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
     text-align: center;
 }
@@ -432,6 +437,28 @@ var jdn = {
         "I'm Glad That Our Distance Makes Us Witness Ourselves From A Different Entrance.",
         "Females Are Amazing.",
         ],
+    sun_signs: [],
+    moon_signs: [],
+    lookup_sun_sign: function(monthday) {
+        var m = +monthday.substr(0,2);
+        var d = +monthday.substr(-2);
+        if ( monthday.length === 3 ) m = +monthday.substr(0,1);
+
+        if ( ( m === 3 && d > 20 ) || ( m === 4 && d < 20 ) ) return 'Aries';
+        else if ( ( m === 4 && d > 19 ) || ( m === 5 && d < 21 ) ) return 'Taurus';
+        else if ( ( m === 5 && d > 20 ) || ( m === 6 && d < 21 ) ) return 'Gemini';
+        else if ( ( m === 6 && d > 20 ) || ( m === 7 && d < 23 ) ) return 'Cancer';
+        else if ( ( m === 7 && d > 22 ) || ( m === 8 && d < 23 ) ) return 'Leo';
+        else if ( ( m === 8 && d > 22 ) || ( m === 9 && d < 23 ) ) return 'Virgo';
+        else if ( ( m === 9 && d > 22 ) || ( m === 10 && d < 23 ) ) return 'Libra';
+        else if ( ( m === 10 && d > 22 ) || ( m === 11 && d < 22 ) ) return 'Scorpio';
+        else if ( ( m === 11 && d > 21 ) || ( m === 12 && d < 22 ) ) return 'Saggitarius';
+        else if ( ( m === 12 && d > 21 ) || ( m === 1 && d < 20 ) ) return 'Capricorn';
+        else if ( ( m === 1 && d > 19 ) || ( m === 2 && d < 19 ) ) return 'Aquarius';
+        else if ( ( m === 2 && d > 18 ) || ( m === 3 && d < 21 ) ) return 'Pisces';
+    },
+    lookup_moon_sign: function(monthday) {
+    },
     make: function(index) {
         
         var md = +(document.getElementById('birth-month').value + document.getElementById('birth-day').value);
