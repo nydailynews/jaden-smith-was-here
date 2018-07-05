@@ -110,7 +110,7 @@
 <!-- CONTENT-START -->
 <main>
     <article>
-		<div id="dek">Jaden Smith’s Words of Wisdom</div>
+		<div id="dek" class="hide">Jaden Smith’s Words of Wisdom</div>
 		<h1>Which Jaden Smith Tweet Is Your Life?</h1>
 
 		<ul class="ra-share" id="ra-share-top">
@@ -124,12 +124,12 @@
 			<strong>Jaden Smith contains multitudes.</strong> He acts, he sings, he writes songs, he’s a rapper. He’s the son of celebrity royalty. He might be a Scientologist.
 		</p>
 		<p>
-			But this multi-hyphenate’s <strong>exploration of human thought truly shines</strong> on Twitter.
-			So, in honor of Jaden's birthday, we wrote a sophisticated algorithm. Using the zodiac's sun-sign and moon-sign, we correlated the number of capitalized words in each tweet and the vowel-to-consonant ratio to bring you <strong>The Jaden Smith Tweet That Defines Your Life</strong>:
+			But this multi-hyphenate’s <strong>exploration of human thought</strong> truly shines on Twitter.
+			So, in honor of Jaden's birthday, we wrote a sophisticated algorithm. Using the zodiac's sun-sign and moon-sign, we correlated the number of capitalized words in each tweet and the vowel-to-consonant ratio to bring you <strong>The Jaden Smith Tweet That Defines Your Life</strong>.
 		</p>
         <form id="interface" action="#" method="GET" onSubmit="return false;">
             <p>
-                <label for="birth-month">Birth month</label>
+                <label for="birth-month">Your birth month</label>
                 <select id="birth-month">
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -143,10 +143,8 @@
                     <option value="10">October</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
-                </select>
-            </p>
-            <p>
-                <label for="birth-day">Birth day</label>
+                </select>,
+                <label for="birth-day">birth day</label>
                 <input type="number" min="1" max="31" id="birth-day">
             </p>
             <div id="buttons">
@@ -177,10 +175,31 @@ body {
     background-color: white;
 }
 main {
-    background-color: white;
+	background: white url('img/jaden-smith-repeating-background.png') repeat-x left top;
+	background-size: 500px;
+	padding-top: 170px;
+	position: relative;
+	top: -50px;
+}
+main:after {
+	background: url('img/jaden-smith-lofi.png') repeat-x left bottom;
+	background-size: auto;
+	content: " ";
+	width: 100%;
+	height: 400px;
+	position: absolute;
+	transition: all 5s ease-out;
+}
+main.blur:after {
+	-webkit-filter: blur(20px) grayscale(20%);
+	filter: blur(20px) grayscale(20%);
+}
+main.color:after {
+	-webkit-filter: hue-rotate(160deg);
+	filter: hue-rotate(160deg);
 }
 body#nydailynews article {
-    background-color: rgb(215,215,215);
+    background-color: rgb(253,253,253);
     max-width: 824px;
     margin: auto;
     padding: 25px;
@@ -208,6 +227,11 @@ body#nydailynews article:after {
 article p {
     font-family: "Open Sans", sans-serif;
 }
+article h1 {
+	margin: auto;
+	border-top: none;
+	border-bottom: none;
+}
 article h1, #stage blockquote {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: bold;
@@ -222,7 +246,7 @@ form {
     margin: 10px auto;
 }
 form p {
-    max-width: 300px;
+	text-align: center;
     margin: 5px auto;
 }
 article select {
@@ -369,8 +393,37 @@ var jdn = {
         if ( d < 10 ) d = "0" + d;
         this.make("" + m + d);
     },
+	cell_length: 5 * 1000,
+	trippy: function() {
+		// Rotate through classes on the main element.
+		window.setTimeout(function() {
+			var m = document.querySelector('main');
+			m.setAttribute('class', 'color');
+			}, 0
+			);
+		window.setTimeout(function() {
+			var m = document.querySelector('main');
+			m.setAttribute('class', '');
+			}, 1 * jdn.cell_length
+			);
+		window.setTimeout(function() {
+			var m = document.querySelector('main');
+			//utils.add_class(m, 'blur');
+			m.setAttribute('class', 'blur');
+			}, 2 * jdn.cell_length
+			);
+		window.setTimeout(function() {
+			var m = document.querySelector('main');
+			m.setAttribute('class', '');
+			}, 3 * jdn.cell_length
+			);
+		console.log("TRIPPY");
+	},
     init: function(config) {
         this.config.quote_l = this.data.length - 1;
+		//this.trippy_interval = window.setInterval(this.trippy(), 1 * jdn.cell_length);
+		this.trippy();
+		window.setInterval(this.trippy, 20000);
     }
 };
 jdn.init();
@@ -477,7 +530,7 @@ var utils = {
     },
     add_class: function(el, class_name) {
         // From http://youmightnotneedjquery.com/#add_class
-        if ( el.classlist ) el.classList.add(class_name);
+        if ( el.classList ) el.classList.add(class_name);
         else el.className += ' ' + class_name;
         return el;
     },
