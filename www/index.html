@@ -72,7 +72,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://interactive.nydailynews.com/quiz/css/style-howmany-v2.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700|PT+Serif" rel="stylesheet">
-    <script data-main="//interactive.nydailynews.com/nydn/js/rh.js?r=20170405001" src="//www.nydailynews.com/nydn/js/require.js?r=2016LIST" defer></script>
+    <script data-main="//interactive.nydailynews.com/nydn/js/rh.js?r=20170405001" src="//interactive.nydailynews.com/nydn/js/require.js?r=2016LIST" defer></script>
       
     <script>
         var nydn = nydn || {
@@ -196,7 +196,9 @@
             </div>
         </div>
 
-        <p id="blurb">You are a aries in your sun sign and a virgo in your moon sign and this is the tweet that is definitely your life from now on.</p>
+        <p id="blurb" class="hide">
+            You are a aries in your sun sign and a virgo in your moon sign and this is the tweet that is definitely your life from now on.
+        </p>
         <section id="stage" class="hide">
             <img id="jaden-smith" alt="A photo of Jaden Smith">
             <blockquote id="quoted"></blockquote>
@@ -433,6 +435,29 @@ var jdn = {
 
     },
     save: function() {
+        html2canvas($('#stage'), {
+            allowTaint: true,
+            onrendered: function(canvas) {
+
+                document.body.appendChild(canvas);
+                window.oCanvas = document.getElementsByTagName("canvas");
+                window.oCanvas = window.oCanvas[0];
+                var strDataURI = window.oCanvas.toDataURL();
+
+                var filename = utils.slugify($('#quoted').text());
+
+                var a = $("<a>").attr("href", strDataURI).attr("download", "jaden-" + filename + ".png").appendTo("body");
+                a[0].click();
+                a.remove();
+
+                $('#download-'+filename).attr('href', strDataURI).attr('target', '_blank');
+                $('#download-'+filename).trigger('click');
+                window.location.reload(true);
+
+                $('#url').addClass('hide');
+                $('#card').removeClass('black');
+            }
+        });
     },
     rando: function() {
         var m = Math.floor(Math.random() * 11) + 1;
@@ -591,8 +616,17 @@ var utils = {
         s.setAttribute('src', src);
         document.getElementsByTagName('head')[0].appendChild(s);
     },
+    slugify: function(text) {
+        return text
+            .toLowerCase()
+            .replace(/[^\w ]+/g,'')
+            .replace(/ +/g,'-');
+    }
 }
 </script>
+<script src="js/app.js"></script>
+<script src="http://interactive.nydailynews.com/js/html2canvas/0.4.1/html2canvas.js"></script>
+
 <!-- CONTENT-END -->
 
 <div style="height:300px;"></div>
