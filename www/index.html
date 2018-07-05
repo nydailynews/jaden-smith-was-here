@@ -205,6 +205,7 @@
             <div>
                 <blockquote id="quoted"></blockquote>
                 <p id="asterisk" class="hide"><span>*</span> Jaden didn't actually write this</p>
+                <p id="url" class="hide">http://nydn.us/jaden</p>
             </div>
         </section>
         <div class="buttons">
@@ -508,6 +509,8 @@ var jdn = {
         window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
     },
     save: function() {
+        // Generate and save an image of the quote.
+        document.getElementById('url').setAttribute('class', '');
         html2canvas($('#stage'), {
             allowTaint: true,
             onrendered: function(canvas) {
@@ -527,7 +530,7 @@ var jdn = {
                 $('#download-'+filename).trigger('click');
                 window.location.reload(true);
 
-                //$('#url').addClass('hide');
+                document.getElementById('url').setAttribute('class', 'hide');
             }
         });
     },
