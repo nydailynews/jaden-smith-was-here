@@ -122,7 +122,7 @@
     
         <p id="datestamp" class="stamp">Published July 7, 2018</p>
         <p>
-            <strong>Jaden Smith contains multitudes.</strong> He acts, he sings, he writes songs, he’s a rapper. He’s the son of celebrity royalty. He might be a Scientologist.
+            <strong>Jaden Smith contains multitudes.</strong> He acts, he sings, he writes songs, he’s a rapper. He’s the son of celebrity royalty.
         </p>
         <p>
             But this multi-hyphenate’s <strong>exploration of human thought</strong> <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">truly shines on Twitter</a>.
@@ -197,7 +197,7 @@
         </div>
 
         <p id="blurb" class="hide">
-            You are a<span id="n"></span> <span id="sun-sign" class="sign">aries</span> in your sun sign and a <span id="moon-sign" class="sign">virgo<span> in your moon sign
+            You are a<span id="n"></span> <span id="sun-sign" class="sign">aries</span> in your sun sign and a <span id="moon-sign" class="sign">virgo</span> in your moon sign
             and this is the tweet that is definitely your life from now on:
         </p>
         <section id="stage" class="hide">
@@ -267,12 +267,12 @@ body#nydailynews article:before {
 }
 body#nydailynews article:after {
     background: url('img/jaden-smith-2018.png') no-repeat right bottom;
-    background-size: 300px auto;
-    width: 300px;
+    background-size: 400px auto;
+    width: 400px;
     height: 600px;
     content: " ";
     position: absolute;
-    right: 50px;
+    right: 0;
     top: 0;
 }
 article p {
@@ -459,6 +459,14 @@ var jdn = {
     },
     lookup_moon_sign: function(monthday) {
     },
+    set_signs: function(monthday) {
+        var sign = this.lookup_sun_sign(monthday);
+        document.getElementById('sun-sign').textContent = sign;
+        if ( ['A','E','I','O','U'].indexOf(sign.substr(0,1)) !== -1 ) document.getElementById('n').textContent = 'n';
+        else document.getElementById('n').textContent = '';
+
+        document.getElementById('moon-sign').innerHTML = '<abbr title="We need the time you were born and the year to calculate your moon sign">????</abbr>';
+    },
     make: function(index) {
         
         var md = +(document.getElementById('birth-month').value + document.getElementById('birth-day').value);
@@ -480,6 +488,8 @@ var jdn = {
         document.getElementById('rando').setAttribute('class', '');
         document.getElementById('truly_rando').setAttribute('class', '');
         document.getElementById('blurb').setAttribute('class', '');
+
+        this.set_signs('' + index);
 
         var t = document.getElementById('stage').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
