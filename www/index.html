@@ -476,7 +476,7 @@ var jdn = {
         if ( ['A','E','I','O','U'].indexOf(sign.substr(0,1)) !== -1 ) document.getElementById('n').textContent = 'n';
         else document.getElementById('n').textContent = '';
 
-        document.getElementById('moon-sign').innerHTML = '<abbr title="We need the time you were born and the year to calculate your moon sign">????</abbr>';
+        document.getElementById('moon-sign').innerHTML = '<abbr title="We need the time you were born and the year to calculate your moon sign">¯\\_(ツ)_/¯<abbr>';
     },
     make: function(index) {
         
@@ -538,6 +538,10 @@ var jdn = {
         this.make("" + m + d);
     },
     truly_rando: function() {
+        var img_index = ( Math.floor(Math.random() * 20) % this.config.img_l ) + 1;
+        var img = document.getElementById('jaden-smith');
+        img.setAttribute('src', 'img/jaden-smith-' + img_index + '.png');
+
         document.getElementById('asterisk').setAttribute('class', '');
         markov.load_title();
     },

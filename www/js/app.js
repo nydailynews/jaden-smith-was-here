@@ -30,13 +30,15 @@ var markov = {
 
         if (title.length < min) return this.make_title(min, max);
         if (title.length > max) return this.make_title(min, max);
+        if (this.titles.indexOf(title.join(' ')) !== -1) return this.make_title(min, max);
+
         return title.join(' ');
     },
     length: 1,
     load_title: function() {
         var floor = 4;
         var min = floor + Math.floor(2 * Math.random());
-        var max = min + Math.floor(10 * Math.random());
+        var max = min + Math.floor(9 * Math.random());
         var title = this.make_title(min, max);
         document.getElementById('quoted').innerHTML = title + '<span>*</span>';
         return title;
