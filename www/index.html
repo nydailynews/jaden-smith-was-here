@@ -144,10 +144,11 @@
                 <label for="birth-day">Birth day</label>
                 <input type="number" min="1" max="31" id="birth-day">
             </p>
-            <div style="clear:both;"></div>
-            <button onClick="jdn.make();" id="make">Submit</button>
-            <button onClick="jdn.save();" id="save" class="hide">Save</button>
-            <button onClick="jdn.rando();" id="rando" class="hide">Random</button>
+            <div id="buttons">
+				<button onClick="jdn.make();" id="make">Submit</button>
+				<button onClick="jdn.save();" id="save" class="hide">Save</button>
+				<button onClick="jdn.rando();" id="rando" class="hide">Random</button>
+			</div>
         </form>
 
         <div class="ad center">
@@ -208,16 +209,22 @@ article h1, #stage blockquote {
     letter-spacing: 0;
 }
 form {
-    max-width: 300px;
-    margin: auto;
+    margin: 10px auto;
 }
 form p {
-    float: left;
-    margin-right: 10px;
+    max-width: 300px;
+    margin: 5px auto;
 }
-
+article select {
+	font-size: 14px;
+}
 input, select {
     border: 2px solid #999;
+}
+#buttons {
+	max-width: 400px;
+	margin: auto;
+	text-align: center;
 }
 button { 
     margin: 5px;
@@ -238,6 +245,7 @@ button:before, button:after {
     width: 200px;
     position: relative;
     left: -20px;
+	align-self: end;
 }
 #stage blockquote:before {
     content: "“";
@@ -253,7 +261,8 @@ button:before, button:after {
     line-height: 40px;
     width: calc(100% - 40px);
 	margin-left: 20px;
-	margin-top: 100px;
+	margin-top: 80px;
+	margin-bottom: 40px;
 }
 .hide {
 	display: none;
