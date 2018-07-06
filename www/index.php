@@ -52,11 +52,10 @@ if ( isset($_GET['quote']) ) {
 	$quote_index = intval($_GET['quote']) % count($quote_images);
 	$share_img = 'https://' . $quote_images[intval($_GET['quote_index'])];
 }
-?>
-<!DOCTYPE HTML>
+?><!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>TITLE</title>
+    <title>Which Jaden Smith tweet is the story of your life?</title>
     <link rel="icon" type="image/png" href="http://interactive.nydailynews.com/favicons.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -67,13 +66,13 @@ if ( isset($_GET['quote']) ) {
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
     <!-- Titles -->
-    <meta property="og:title" content='TITLE' />
-    <meta name="twitter:title" content='TITLE' />
+    <meta property="og:title" content='Which Jaden Smith tweet is the story of your life?' />
+    <meta name="twitter:title" content='Which Jaden Smith tweet is the story of your life?' />
 
     <!-- Descriptions -->
-    <meta name="description" content="DESC" />
-    <meta property="og:description" content="DESC" />
-    <meta name="twitter:description" content="DESC" />
+    <meta name="description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
+    <meta property="og:description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
+    <meta name="twitter:description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
 
     <!-- KEYWORD -->
     <meta name="keywords" content="Jaden Smith,Jaden Smith twitter,Jaden Smith twitter generator" />
@@ -95,13 +94,13 @@ if ( isset($_GET['quote']) ) {
         {
             "@context": "http://schema.org",
             "@type": "NewsArticle",
-            "headline": "TITLE",
+            "headline": "Which Jaden Smith tweet is the story of your life?",
             "url": "http://interactive.nydailynews.com/project/jaden-smith-tweets/",
             "thumbnailUrl": "http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-banner.jpg",
             "dateCreated": "2018-07-08T06:00:00Z",
-            "articleSection": "Interactive",
+            "articleSection": "Entertainment",
             "creator": ["Interactive Project", "Chase Gaewski", "Joe Murphy", "Spencer Dukoff"],
-            "keywords": ["interactive project","interactive","jaden smith","twitter","jaden smith tweets"]
+            "keywords": ["interactive project","interactive","jaden smith","twitter","jaden smith tweets","twitter"]
         }
     </script>
 
@@ -139,7 +138,7 @@ if ( isset($_GET['quote']) ) {
             "targetPath": document.location.pathname
         };
         var nydnDO = [ { 
-            'title':'xxxTITLExxx', 
+            'title':'xxxWhich Jaden Smith tweet is the story of your life?xxx', 
             'link':'http://interactive.nydailynews.com/project/jaden-smith-tweets/', 
             'p_type':'interactive', 
             'section':'interactive' 
@@ -809,7 +808,7 @@ var jdn = {
 			// Add a PV
 			if ( typeof PARSELY !== 'undefined' ) {
 				PARSELY.beacon.trackPageView({
-					url: document.location.href,
+					url: document.location.origin + document.location.pathname,
 					urlref: document.location.href,
 					js: 1
 				});
