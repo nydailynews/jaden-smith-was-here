@@ -1,8 +1,8 @@
 <?php
 $share_img = 'CANONICALimg/share.png';
 $url_append = '';
-if ( isset($_GET['quote'])  && isset($_GET['quote_id']) ) {
-	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4) . '&quote_id=' + intval($_GET['quote_id']);
+if ( isset($_GET['quote']) ) {
+	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
 	$quote_images = ["pic.twitter.com/v1cX31FeaT",
         "pic.twitter.com/xJ9KwppAxI",
         "pic.twitter.com/xBjyzFP0Dy",
@@ -49,7 +49,8 @@ if ( isset($_GET['quote'])  && isset($_GET['quote_id']) ) {
         "pic.twitter.com/T0mmP1TSlr",
         "pic.twitter.com/zynpQgBUO5",
         "pic.twitter.com/37GdEGfJ7Z"];
-	$share_img = 'https://' . $quote_images[intval($_GET['quote_id'])];
+	$quote_index = intval($_GET['quote']) % count($quote_images);
+	$share_img = 'https://' . $quote_images[intval($_GET['quote_index'])];
 }
 ?>
 <!DOCTYPE HTML>
@@ -711,7 +712,9 @@ var jdn = {
 		if ( document.location.hash !== '' ) quote = document.location.hash.substr(1);
 		if ( document.location.search !== '' ) quote = document.location.replace('?quote=','');
         var url_hash = document.location.origin + document.location.pathname + '#' + quote;
-        var url_search = document.location.origin + document.location.pathname + '?quote=' + quote + '&quote_id=' + this.quote_id;
+        var url_search = document.location.origin + document.location.pathname + '?quote=' + quote;
+		console.log(url_hash, url_search);
+		return false;
 
 		if ( destination === 'email' ) {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
