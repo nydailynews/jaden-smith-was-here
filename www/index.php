@@ -4,8 +4,8 @@ $url_append = '';
 $title = 'Which Jaden Smith tweet is the story of your life?';
 $desc = 'We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free.';
 if ( isset($_GET['quote']) ) {
-	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
-	$quote_images = ["https://pbs.twimg.com/media/DhbinlhW4AARELo.png",
+    $url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
+    $quote_images = ["https://pbs.twimg.com/media/DhbinlhW4AARELo.png",
         "https://pbs.twimg.com/media/Dhbivm5W4AA5Ao-.png",
         "https://pbs.twimg.com/media/DhbuXSfUEAA3sL6.png",
         "https://pbs.twimg.com/media/DhbwLjSVAAEIU5W.png",
@@ -51,11 +51,11 @@ if ( isset($_GET['quote']) ) {
         "https://pbs.twimg.com/media/Dhbq3MYVQAENTuq.png",
         "https://pbs.twimg.com/media/DhbtGsqV4AELGwf.png",
         "https://pbs.twimg.com/media/DhbxkGQVMAAQHPk.png"];
-	$quote_index = intval($_GET['quote']) % count($quote_images);
-	//$quote_index = intval($_GET['quote']) % 46;
-	$share_img = $quote_images[$quote_index];
-	$title = 'This Jaden Smith tweet guides my life:';
-	$desc = 'hashtag thanksJaden';
+    $quote_index = intval($_GET['quote']) % count($quote_images);
+    //$quote_index = intval($_GET['quote']) % 46;
+    $share_img = $quote_images[$quote_index];
+    $title = 'This Jaden Smith tweet guides my life:';
+    $desc = 'hashtag thanksJaden';
 }
 //echo $quote_index;
 ?><!DOCTYPE HTML>
@@ -84,12 +84,12 @@ if ( isset($_GET['quote']) ) {
     <meta name="keywords" content="Jaden Smith,Jaden Smith twitter,Jaden Smith twitter generator" />
 
     <!-- LINK -->
-	<link rel="canonical" href="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>">
-	<meta property="og:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
-	<meta name="twitter:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
+    <link rel="canonical" href="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>">
+    <meta property="og:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
+    <meta name="twitter:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
 
     <!-- THUMBNAIL IMAGE-->
-	<meta property="og:image" content="<?php echo $share_img; ?>" />
+    <meta property="og:image" content="<?php echo $share_img; ?>" />
     <meta name="twitter:image" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-twitter-share.jpg" />
     <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
     <meta property="og:image:width" content="774" />
@@ -183,18 +183,18 @@ if ( isset($_GET['quote']) ) {
     
         <p id="datestamp" class="stamp">Published July 8, 2018</p>
         <p>
-			<img src="img/jaden-circle.png" alt="Photo of Jaden Smith" id="jaden-smith-profile">
-			We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
+            <img src="img/jaden-circle.png" alt="Photo of Jaden Smith" id="jaden-smith-profile">
+            We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
         </p>
         <p>
-			With just a tweet, we are always one <a href="https://twitter.com/officialjaden">jaden-lightenment</a> away from exploring <strong>the far corners of</strong> human thought.
-			In honor of Jaden’s <span id="jaden-age">20</span>th birthday <span id="album-release">and the release of his album “SYRE: The Electric Album,”</span>
-			we consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
+            With just a tweet, we are always one <a href="https://twitter.com/officialjaden">jaden-lightenment</a> away from exploring <strong>the far corners of</strong> human thought.
+            In honor of Jaden’s <span id="jaden-age">20</span>th birthday <span id="album-release">and the release of his album “SYRE: The Electric Album,”</span>
+            we consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
         </p>
         <p>
-			<strong>
-			Enter your birthday below to reach peak Jaden Smith Twitter enlightenment:
-			</strong>
+            <strong>
+            Enter your birthday below to reach peak Jaden Smith Twitter enlightenment:
+            </strong>
         </p>
         <form id="interface" action="#" method="GET" onSubmit="return false;">
             <p>
@@ -451,7 +451,7 @@ var jdn = {
             this.next += 1;
             document.location.hash = '#n' + this.next;
         }
-		this.quote_index = quote_index;
+        this.quote_index = quote_index;
         var qt = document.getElementById('quoted');
         qt.textContent = this.data[quote_index];
 
@@ -471,58 +471,58 @@ var jdn = {
         document.getElementById('share-facebook').setAttribute('class', '');
         document.getElementById('asterisk').setAttribute('class', 'hide');
 
-		// I'm truly sorry.
-		// Cribbed from https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
-		var isChromium = window.chrome;
-		var winNav = window.navigator;
-		var vendorName = winNav.vendor;
-		var isOpera = typeof window.opr !== "undefined";
-		var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-		var isIOSChrome = winNav.userAgent.match("CriOS");
+        // I'm truly sorry.
+        // Cribbed from https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
+        var isChromium = window.chrome;
+        var winNav = window.navigator;
+        var vendorName = winNav.vendor;
+        var isOpera = typeof window.opr !== "undefined";
+        var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+        var isIOSChrome = winNav.userAgent.match("CriOS");
 
-		if ( isIOSChrome ) document.getElementById('save').setAttribute('class', '');
-		else if (
-			isChromium !== null &&
-			typeof isChromium !== "undefined" &&
-			vendorName === "Google Inc." &&
-			isOpera === false &&
-			isIEedge === false
-		) {
-			// Is Google Chrome
-			document.getElementById('save').setAttribute('class', '');
-		}
+        if ( isIOSChrome ) document.getElementById('save').setAttribute('class', '');
+        else if (
+            isChromium !== null &&
+            typeof isChromium !== "undefined" &&
+            vendorName === "Google Inc." &&
+            isOpera === false &&
+            isIEedge === false
+        ) {
+            // Is Google Chrome
+            document.getElementById('save').setAttribute('class', '');
+        }
 
         var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
         window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
 
-		// AD REFRESH AND SUCH
-		this.count += 1;
+        // AD REFRESH AND SUCH
+        this.count += 1;
 
-		if ( this.count % 10 == 0 ) {
-			//$('#motto-image, #house-name, #motto').addClass('hide');
-			//$('#ad' + this.ad).removeClass('hide');
-			//return true;
-		}
-		if ( this.count > 1 && this.count % 10 == 1 ) {
-			//$('#ad' + ad).addClass('hide');
-			//$('#motto-image, #house-name, #motto').removeClass('hide');
-			this.ad += 1;
-			if ( this.ad > 3 ) this.ad = 1;
-			// AD REFRESH
-			if ( this.count % 30 == 1 ) googletag.pubads().refresh();
-		}
-		if ( this.count % 10 == 0 ) {
-			// Add a PV
-			if ( typeof PARSELY !== 'undefined' ) {
-				PARSELY.beacon.trackPageView({
-					url: document.location.origin + document.location.pathname,
-					urlref: document.location.href,
-					js: 1
-				});
-			}
-		}
-		return false;
+        if ( this.count % 10 == 0 ) {
+            //$('#motto-image, #house-name, #motto').addClass('hide');
+            //$('#ad' + this.ad).removeClass('hide');
+            //return true;
+        }
+        if ( this.count > 1 && this.count % 10 == 1 ) {
+            //$('#ad' + ad).addClass('hide');
+            //$('#motto-image, #house-name, #motto').removeClass('hide');
+            this.ad += 1;
+            if ( this.ad > 3 ) this.ad = 1;
+            // AD REFRESH
+            if ( this.count % 30 == 1 ) googletag.pubads().refresh();
+        }
+        if ( this.count % 10 == 0 ) {
+            // Add a PV
+            if ( typeof PARSELY !== 'undefined' ) {
+                PARSELY.beacon.trackPageView({
+                    url: document.location.origin + document.location.pathname,
+                    urlref: document.location.href,
+                    js: 1
+                });
+            }
+        }
+        return false;
     },
     save: function() {
         // Generate and save an image of the quote.
@@ -548,8 +548,8 @@ var jdn = {
 
                 document.getElementById('url').setAttribute('class', 'hide');
             }
-		});
-		//.then( function(canvas) { document.body.appendChild(canvas) });
+        });
+        //.then( function(canvas) { document.body.appendChild(canvas) });
     },
     rando: function() {
         var m = Math.round(Math.random() * 11) + 1;
@@ -573,22 +573,22 @@ var jdn = {
     },
     share: function(destination) {
         // Put together the URL and deliver to the appropriate share place: email, twitter or facebook.
-		var quote;
-		if ( document.location.hash !== '' ) quote = document.location.hash.substr(1);
-		if ( document.location.search !== '' ) quote = document.location.replace('?quote=','');
+        var quote;
+        if ( document.location.hash !== '' ) quote = document.location.hash.substr(1);
+        if ( document.location.search !== '' ) quote = document.location.replace('?quote=','');
         var url_hash = document.location.origin + document.location.pathname + '#' + quote;
         var url_search = encodeURI(document.location.origin + document.location.pathname + '?quote=' + quote);
-		console.log(url_hash, url_search);
+        console.log(url_hash, url_search);
 
-		if ( destination === 'email' ) {
-			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
-		}
-		else if ( destination == 'twitter' ) {
-			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_search + '&via=nydni&related=officialjaden,nydni';
-		}
-		else if ( destination == 'facebook' ) {
-			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
-		}
+        if ( destination === 'email' ) {
+            window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
+        }
+        else if ( destination == 'twitter' ) {
+            window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_search + '&via=nydni&related=officialjaden,nydni';
+        }
+        else if ( destination == 'facebook' ) {
+            window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
+        }
     },
     load_permalink: function(birthday) {
         // Load a saved image.
