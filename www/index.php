@@ -177,6 +177,7 @@ if ( isset($_GET['quote']) ) {
     
         <p id="datestamp" class="stamp">Published July 7, 2018</p>
         <p>
+			<img src="img/jaden-circle.png" alt="Photo of Jaden Smith" id="jaden-smith-profile">
 			We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
         </p>
         <p>
@@ -332,14 +333,25 @@ if ( isset($_GET['quote']) ) {
   }
 }
 body {
-    background-color: white;
+	background-color: transparent;
+}
+body:before {
+	background: white url('img/jaden-smith-initials.gif') no-repeat top 300px center;
+	background-size: contain;
+	background-size: 60%;
+	content: "";
+	opacity: 0.5;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 2000px;
 }
 main {
-    background: white url('img/jaden-smith-repeating-background.png') repeat-x left top;
+    background: url('img/jaden-smith-background-2018.png') repeat-x left top;
     background-size: 500px;
-    padding-top: 170px;
+    padding-top: 125px;
     position: relative;
-    top: -50px;
+    top: -40px;
 }
 main:after {
     background: url('img/jaden-smith-lofi.png') repeat-x left bottom;
@@ -359,14 +371,15 @@ main.color:after {
     filter: hue-rotate(160deg);
 }
 body#nydailynews article {
-    background-color: rgb(251,251,251);
+	background-color: transparent;
     max-width: 824px;
     margin: auto;
     padding-bottom: 500px;
     padding: 25px;
 }
+/*
 body#nydailynews article:before {
-    abackground: url('img/jaden-smith-2019.png') no-repeat left bottom;
+    background: url('img/jaden-smith-2019.png') no-repeat left bottom;
     background-size: 300px auto;
     width: calc(100% - 424px);
     width: 300px;
@@ -385,6 +398,7 @@ body#nydailynews article:after {
     right: 0;
     top: 0;
 }
+*/
 article p {
     font-family: "Open Sans", sans-serif;
 }
@@ -406,6 +420,14 @@ article h1, #stage blockquote {
     height: 40px;
     text-align: center;
     margin-bottom: 0;
+}
+img#jaden-smith-profile {
+	float: right;
+	margin: 5px;
+	width: 200px;
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
 form {
     margin: 10px auto;
