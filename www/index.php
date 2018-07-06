@@ -760,6 +760,7 @@ var jdn = {
         var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
         window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
+		return false;
     },
     save: function() {
         // Generate and save an image of the quote.
@@ -785,7 +786,8 @@ var jdn = {
 
                 document.getElementById('url').setAttribute('class', 'hide');
             }
-        }).then( function(canvas) { document.body.appendChild(canvas) });
+		});
+		//.then( function(canvas) { document.body.appendChild(canvas) });
     },
     rando: function() {
         var m = Math.floor(Math.random() * 11) + 1;
