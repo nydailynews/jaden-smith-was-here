@@ -181,7 +181,8 @@ if ( isset($_GET['quote']) ) {
         </p>
         <p>
 			With just a tweet, we are always one <strong>jaden-lightenment</strong> away from exploring <strong>the far corners of</strong> human thought.
-			In honor of his birthday, we've consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
+			In honor of Jaden’s <span id="jaden-age">20</span>th birthday <span id="album-release">and the release of his album “SYRE: The Electric Album,”</span>
+			we consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
         </p>
         <p>
 			<strong>
@@ -732,6 +733,8 @@ var jdn = {
         console.log(index, typeof index, md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
 
         document.getElementById('stage').setAttribute('class', 'grid');
+        document.getElementById('stage').setAttribute('role', '');
+        document.getElementById('stage').setAttribute('role', 'alert');
         document.getElementById('save').setAttribute('class', '');
         document.getElementById('rando').setAttribute('class', '');
         document.getElementById('truly_rando').setAttribute('class', '');
@@ -783,6 +786,8 @@ var jdn = {
 
         document.getElementById('asterisk').setAttribute('class', '');
         markov.load_title();
+        document.getElementById('stage').setAttribute('role', '');
+        document.getElementById('stage').setAttribute('role', 'alert');
 
         document.getElementById('share-email').setAttribute('class', 'hide');
         document.getElementById('share-twitter').setAttribute('class', 'hide');
