@@ -85,8 +85,8 @@ if ( isset($_GET['quote']) ) {
 
     <!-- THUMBNAIL IMAGE-->
 	<meta property="og:image" content="<?php echo $share_img; ?>" />
-    <meta name="twitter:image" content="CANONICALimg/share.png" />
-    <meta name="twitter:image:alt" content="A description of the twitter image" />
+    <meta name="twitter:image" content="CANONICALimg/jaden-smith-twitter-share.jpg" />
+    <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
 
@@ -97,7 +97,7 @@ if ( isset($_GET['quote']) ) {
             "@type": "NewsArticle",
             "headline": "TITLE",
             "url": "CANONICAL",
-            "thumbnailUrl": "CANONICALimg/share.png",
+            "thumbnailUrl": "CANONICALimg/jaden-smith-banner.jpg",
             "dateCreated": "2018-07-06T06:00:00Z",
             "articleSection": "Interactive",
             "creator": ["Interactive Project", "Chase Gaewski", "Joe Murphy", "Spencer Dukoff"],
