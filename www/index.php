@@ -180,7 +180,7 @@ if ( isset($_GET['quote']) ) {
 			We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
         </p>
         <p>
-			With just a tweet, we are always one <strong>jaden-lightenment</strong> away from exploring <strong>the far corners of</strong> human thought.
+			With just a tweet, we are always one <a href="https://twitter.com/officialjaden">jaden-lightenment</a> away from exploring <strong>the far corners of</strong> human thought.
 			In honor of Jaden’s <span id="jaden-age">20</span>th birthday <span id="album-release">and the release of his album “SYRE: The Electric Album,”</span>
 			we consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
         </p>
