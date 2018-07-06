@@ -1,6 +1,8 @@
 <?php
 $share_img = 'http://interactive.nydailynews.com/project/jaden-smith-tweets/img/share.png';
 $url_append = '';
+$title = 'Which Jaden Smith tweet is the story of your life?';
+$desc = 'We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free.';
 if ( isset($_GET['quote']) ) {
 	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
 	$quote_images = ["https://pbs.twimg.com/media/DhbinlhW4AARELo.png",
@@ -50,8 +52,12 @@ if ( isset($_GET['quote']) ) {
         "https://pbs.twimg.com/media/DhbtGsqV4AELGwf.png",
         "https://pbs.twimg.com/media/DhbxkGQVMAAQHPk.png"];
 	$quote_index = intval($_GET['quote']) % count($quote_images);
-	$share_img = 'https://' . $quote_images[intval($_GET['quote_index'])];
+	//$quote_index = intval($_GET['quote']) % 46;
+	$share_img = $quote_images[$quote_index];
+	$title = 'This Jaden Smith tweet guides my life:';
+	$desc = 'hashtag thanksJaden';
 }
+//echo $quote_index;
 ?><!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -66,13 +72,13 @@ if ( isset($_GET['quote']) ) {
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
     <!-- Titles -->
-    <meta property="og:title" content='Which Jaden Smith tweet is the story of your life?' />
+    <meta property="og:title" content='<?php echo $title; ?>' />
     <meta name="twitter:title" content='Which Jaden Smith tweet is the story of your life?' />
 
     <!-- Descriptions -->
-    <meta name="description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
-    <meta property="og:description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
-    <meta name="twitter:description" content="We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free." />
+    <meta name="description" content="<?php echo $desc; ?>" />
+    <meta property="og:description" content="<?php echo $desc; ?>" />
+    <meta name="twitter:description" content="<?php echo $desc; ?>" />
 
     <!-- KEYWORD -->
     <meta name="keywords" content="Jaden Smith,Jaden Smith twitter,Jaden Smith twitter generator" />
@@ -86,8 +92,12 @@ if ( isset($_GET['quote']) ) {
 	<meta property="og:image" content="<?php echo $share_img; ?>" />
     <meta name="twitter:image" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-twitter-share.jpg" />
     <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
-    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:width" content="774" />
+	<!--
     <meta property="og:image:height" content="512" />
+	-->
+    <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
+    <meta name="og:image:alt" content="JAAAAAAADEN SMITH" />
 
     <!-- PARSELY -->
     <script type="application/ld+json">
@@ -451,7 +461,7 @@ var jdn = {
         var img = document.getElementById('jaden-smith');
         img.setAttribute('src', 'img/jaden-smith-' + img_index + '.png');
 
-        console.log(index, typeof index, md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
+        //console.log(index, typeof index, md, quote_index, img_index, document.getElementById('birth-month').value, document.getElementById('birth-day').value);
 
         document.getElementById('stage').setAttribute('class', 'grid');
         document.getElementById('stage').setAttribute('role', '');
@@ -576,7 +586,7 @@ var jdn = {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
 		}
 		else if ( destination == 'twitter' ) {
-			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&via=nydni&related=officialjaden,nydni';
+			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_share + '&via=nydni&related=officialjaden,nydni';
 		}
 		else if ( destination == 'facebook' ) {
 			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
