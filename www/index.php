@@ -479,9 +479,12 @@ button:focus:before, button:focus:after {
     color: #933400;
 }
 .grid {
+	display: -ms-grid;
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 1fr;
+    -ms-grid-columns: 20% 80%;
+    -ms-grid-rows: 1fr;
     align-content: space-evenly;
 }
 #stage {
@@ -493,6 +496,12 @@ button:focus:before, button:focus:after {
     position: relative;
     left: -20px;
     align-self: end;
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;
+}
+#stage > div {
+	-ms-grid-column: 2;
+	-ms-grid-row: 1;
 }
 #stage blockquote:before {
     content: "“";
@@ -501,6 +510,11 @@ button:focus:before, button:focus:after {
     font-size: 192px;
     margin-top: -5px;
     margin-left: 1px;
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+	#stage blockquote:before {
+		margin-top: -71px;
+	}
 }
 #stage blockquote {
     color: black;
@@ -750,7 +764,7 @@ var jdn = {
     save: function() {
         // Generate and save an image of the quote.
         document.getElementById('url').setAttribute('class', '');
-        html2canvas($('#stage'), {
+        html2canvas(document.getElementById('stage'), {
             allowTaint: true,
             onrendered: function(canvas) {
 
@@ -771,7 +785,7 @@ var jdn = {
 
                 document.getElementById('url').setAttribute('class', 'hide');
             }
-        });
+        }).then( function(canvas) { document.body.appendChild(canvas) });
     },
     rando: function() {
         var m = Math.floor(Math.random() * 11) + 1;
@@ -952,6 +966,10 @@ var utils = {
 }
 </script>
 <script src="js/app.js"></script>
+<!--
+<script src="http://interactive.nydailynews.com/js/es6-promise.js"></script>
+<script src="http://interactive.nydailynews.com/js/html2canvas/1.0.0.alpha/html2canvas.min.js"></script>
+-->
 <script src="http://interactive.nydailynews.com/js/html2canvas/0.4.1/html2canvas.js"></script>
 
 <!-- CONTENT-END -->
