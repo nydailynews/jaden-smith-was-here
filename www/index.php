@@ -1,5 +1,5 @@
 <?php
-$share_img = 'CANONICALimg/share.png';
+$share_img = 'http://interactive.nydailynews.com/project/jaden-smith-tweets/img/share.png';
 $url_append = '';
 if ( isset($_GET['quote']) ) {
 	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
@@ -79,13 +79,13 @@ if ( isset($_GET['quote']) ) {
     <meta name="keywords" content="Jaden Smith,Jaden Smith twitter,Jaden Smith twitter generator" />
 
     <!-- LINK -->
-	<link rel="canonical" href="CANONICAL<?php echo $url_append; ?>">
-	<meta property="og:url" content="CANONICAL<?php echo $url_append; ?>" />
-	<meta name="twitter:url" content="CANONICAL<?php echo $url_append; ?>" />
+	<link rel="canonical" href="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>">
+	<meta property="og:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
+	<meta name="twitter:url" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/<?php echo $url_append; ?>" />
 
     <!-- THUMBNAIL IMAGE-->
 	<meta property="og:image" content="<?php echo $share_img; ?>" />
-    <meta name="twitter:image" content="CANONICALimg/jaden-smith-twitter-share.jpg" />
+    <meta name="twitter:image" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-twitter-share.jpg" />
     <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
@@ -96,9 +96,9 @@ if ( isset($_GET['quote']) ) {
             "@context": "http://schema.org",
             "@type": "NewsArticle",
             "headline": "TITLE",
-            "url": "CANONICAL",
-            "thumbnailUrl": "CANONICALimg/jaden-smith-banner.jpg",
-            "dateCreated": "2018-07-06T06:00:00Z",
+            "url": "http://interactive.nydailynews.com/project/jaden-smith-tweets/",
+            "thumbnailUrl": "http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-banner.jpg",
+            "dateCreated": "2018-07-08T06:00:00Z",
             "articleSection": "Interactive",
             "creator": ["Interactive Project", "Chase Gaewski", "Joe Murphy", "Spencer Dukoff"],
             "keywords": ["interactive project","interactive","jaden smith","twitter","jaden smith tweets"]
@@ -140,7 +140,7 @@ if ( isset($_GET['quote']) ) {
         };
         var nydnDO = [ { 
             'title':'xxxTITLExxx', 
-            'link':'CANONICAL', 
+            'link':'http://interactive.nydailynews.com/project/jaden-smith-tweets/', 
             'p_type':'interactive', 
             'section':'interactive' 
         }];
@@ -166,16 +166,15 @@ if ( isset($_GET['quote']) ) {
 <main>
     <article>
         <div id="dek" class="hide">Jaden Smith’s Words of Wisdom</div>
-        <h1>Which Jaden Smith Tweet Is Your Life?</h1>
-        <h2 style="margin:0; text-align:center;"><em>In Honor Of A Celebrity Birthday</em></h2>
+        <h1>Let this Jaden Smith Tweet Guide You</h1>
 
         <ul class="ra-share" id="ra-share-top">
-            <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=">facebook</a> </li>
-            <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=&url=&related=nydni,">Tweet</a></li>
-            <li class="ra-share-e"> <a href="mailto:?subject=Game of Thrones house motto generator&body=http://interactive.nydailynews.com/project/game-of-thrones-house/">email</a> </li>
+            <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/jaden-smith-tweets/">facebook</a> </li>
+            <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=In honor of @officialjaden’s 20th birthday find which Jaden tweet guides your life&url=SHORTURL&related=nydni,">Tweet</a></li>
+            <li class="ra-share-e"> <a href="mailto:?subject=Find which Jaden Smith tweet guides your life&body=http://interactive.nydailynews.com/project/game-of-thrones-house/">email</a> </li>
         </ul>
     
-        <p id="datestamp" class="stamp">Published July 7, 2018</p>
+        <p id="datestamp" class="stamp">Published July 8, 2018</p>
         <p>
 			<img src="img/jaden-circle.png" alt="Photo of Jaden Smith" id="jaden-smith-profile">
 			We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
@@ -266,7 +265,7 @@ if ( isset($_GET['quote']) ) {
         <div class="buttons" id="buttons">
             <button onClick="jdn.save();" id="save" class="hide">Save</button>
             <button onClick="jdn.rando();" id="rando" class="hide">Random</button>
-            <button onClick="jdn.truly_rando();" id="truly_rando" class="hide">Truly Random</button>
+            <button onClick="jdn.truly_rando();" id="truly_rando" class="hide">Jumbled Jaden</button>
             <button onClick="jdn.share('email');" id="share-email" class="hide">Email This</button>
             <button onClick="jdn.share('twitter');" id="share-twitter" class="hide">Tweet This</button>
             <button onClick="jdn.share('facebook');" id="share-facebook" class="hide">Facebook This</button>
@@ -336,11 +335,11 @@ body {
 	background-color: transparent;
 }
 body:before {
-	background: white url('img/jaden-smith-initials.gif') no-repeat top 300px center;
+	background: white url('img/jaden-smith-initials-photos.png') no-repeat top 500px center;
 	background-size: contain;
 	background-size: 60%;
 	content: "";
-	opacity: 0.5;
+	opacity: 0.2;
 	position: absolute;
 	z-index: -1;
 	width: 100%;
@@ -360,15 +359,25 @@ main:after {
     width: 100%;
     height: 400px;
     position: absolute;
-    transition: all 5s ease-out;
+    animation: footer-animation 7s infinite;
 }
-main.blur:after {
-    -webkit-filter: blur(20px) grayscale(20%);
-    filter: blur(20px) grayscale(20%);
-}
-main.color:after {
-    -webkit-filter: hue-rotate(160deg);
-    filter: hue-rotate(160deg);
+@keyframes footer-animation {
+	25% {
+		-webkit-filter: hue-rotate(0deg);
+		filter: hue-rotate(0deg);
+		-webkit-filter: grayscale(90%);
+		filter: grayscale(90%);
+	}
+	50% {
+		-webkit-filter: grayscale(0%);
+		filter: grayscale(0%);
+		-webkit-filter: hue-rotate(120deg);
+		filter: hue-rotate(120deg);
+	}
+	75% {
+		-webkit-filter: hue-rotate(240deg);
+		filter: hue-rotate(240deg);
+	}
 }
 body#nydailynews article {
 	background-color: transparent;
@@ -422,9 +431,9 @@ article h1, #stage blockquote {
     margin-bottom: 0;
 }
 img#jaden-smith-profile {
+	width: 200px;
 	float: right;
 	margin: 5px;
-	width: 200px;
 	transform: scaleX(-1);
 	filter: FlipH;
 	-ms-filter: "FlipH";
@@ -514,6 +523,9 @@ button:focus:before, button:focus:after {
 
 /* HANDHELD-SPECIFIC */
 @media only screen and ( min-width: 220px ) and ( max-width:727px ) {
+	img#jaden-smith-profile {
+		width: 100px;
+	}
 	form p {
 		font-size: 26px;
 	}
@@ -542,8 +554,14 @@ button:focus:before, button:focus:after {
 }
 /* HANDHELD & TABLET */
 @media only screen and ( min-width: 220px ) and (max-width:1023px) {
+	body:before {
+		background-size: contain;
+	}
 	body#nydailynews article:before, body#nydailynews article:after {
 		background-image: unset;
+	}
+	article h1 {
+		line-height: 40px;
 	}
 }
 </style>
@@ -778,43 +796,16 @@ var jdn = {
         var url_hash = document.location.origin + document.location.pathname + '#' + quote;
         var url_search = document.location.origin + document.location.pathname + '?quote=' + quote;
 		console.log(url_hash, url_search);
-		return false;
 
 		if ( destination === 'email' ) {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
 		}
 		else if ( destination == 'twitter' ) {
-			window.document.location = 'https://twitter.com/intent/tweet?text=Ayyyyyyy + ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&related=nydni';
+			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&related=nydni';
 		}
 		else if ( destination == 'facebook' ) {
 			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
 		}
-    },
-    cell_length: 5 * 1000,
-    trippy: function() {
-        // Rotate through classes on the main element.
-        window.setTimeout(function() {
-            var m = document.querySelector('main');
-            m.setAttribute('class', 'color');
-            }, 0
-            );
-        window.setTimeout(function() {
-            var m = document.querySelector('main');
-            m.setAttribute('class', '');
-            }, 1 * jdn.cell_length
-            );
-        window.setTimeout(function() {
-            var m = document.querySelector('main');
-            //utils.add_class(m, 'blur');
-            m.setAttribute('class', 'blur');
-            }, 2 * jdn.cell_length
-            );
-        window.setTimeout(function() {
-            var m = document.querySelector('main');
-            m.setAttribute('class', '');
-            }, 3 * jdn.cell_length
-            );
-        console.log("TRIPPY");
     },
     load_permalink: function(birthday) {
         // Load a saved image.
@@ -828,10 +819,6 @@ var jdn = {
     },
     init: function(config) {
         this.config.quote_l = this.data.length;
-        //this.trippy_interval = window.setInterval(this.trippy(), 1 * jdn.cell_length);
-        this.trippy();
-        window.setInterval(this.trippy, 20000);
-
         if ( document.location.hash !== '' ) this.load_permalink(document.location.hash.substr(1));
         if ( document.location.search !== '' ) this.load_permalink(document.location.search.replace('?quote=',''));
     }
