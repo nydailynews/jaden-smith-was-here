@@ -177,16 +177,23 @@ if ( isset($_GET['quote']) ) {
     
         <p id="datestamp" class="stamp">Published July 7, 2018</p>
         <p>
-            <strong>Jaden Smith contains multitudes.</strong> He acts, he sings, he writes songs, he’s a rapper. He’s the son of celebrity royalty.
+			We can’t all afford to have a guru deliver daily wisdom for how to move through life. Good thing <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">Jaden Smith’s tweets</a> are free.
         </p>
         <p>
-            But this multi-hyphenate’s <strong>exploration of human thought</strong> <a href="http://www.nydailynews.com/entertainment/movies/jaden-smith-history-twitter-18th-birthday-article-1.2704066">truly shines on Twitter</a>.
-            So, in honor of Jaden's birthday, we wrote a sophisticated algorithm. Using the zodiac's sun-sign and moon-sign, we correlated the number of capitalized words in each tweet and the vowel-to-consonant ratio to bring you <strong>The Jaden Smith Tweet That Defines Your Life</strong>.
+			With just a tweet, we are always one <strong>jaden-lightenment</strong> away from exploring <strong>the far corners of</strong> human thought.
+			In honor of his birthday, we've consulted the stars and developed an algorithm (lol) to transmit you to the perfect Jaden-inspired tweet to get you through today and beyond.
         </p>
+        <p>
+			<strong>
+			Enter your birthday below to reach peak Jaden Smith Twitter enlightenment:
+			</strong>
+        </p>
+<!--
         <img src="img/jaden-circle.png" alt="" id="j01" class="left-circle">
         <img src="img/jaden-circle.png" alt="" id="j02" class="left-circle">
         <img src="img/jaden-circle.png" alt="" id="j03" class="left-circle">
         <img src="img/jaden-circle.png" alt="" id="j04" class="left-circle">
+-->
         <form id="interface" action="#" method="GET" onSubmit="return false;">
             <p>
                 <label for="birth-month">Your birth month</label>
@@ -481,6 +488,33 @@ button:focus:before, button:focus:after {
 }
 .hide {
     display: none;
+}
+
+/* HANDHELD-SPECIFIC */
+@media only screen and ( min-width: 220px ) and ( max-width:727px ) {
+	form p {
+		font-size: 26px;
+	}
+	.buttons button {
+		font-size: 20px;
+	}
+	#stage blockquote {
+		font-size: 23px;
+		line-height: 22px;
+	}
+	#stage img {
+	    width: 150px;
+	}
+	body#nydailynews article:before, body#nydailynews article:after {
+		background-url: unset;
+	}
+}
+
+/* TABLET-SPECIFIC */
+@media only screen and ( min-width: 728px ) and (max-width:1023px) {
+}
+/* HANDHELD & TABLET */
+@media only screen and ( min-width: 220px ) and (max-width:1023px) {
 }
 </style>
 <script>
