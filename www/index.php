@@ -123,8 +123,8 @@ if ( isset($_GET['quote']) ) {
 
     <link rel="stylesheet" href="//interactive.nydailynews.com/nydn/c/rh.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://interactive.nydailynews.com/quiz/css/style-howmany-v2.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700|PT+Serif" rel="stylesheet">
     <script data-main="//interactive.nydailynews.com/nydn/js/rh.js?r=20170405001" src="//interactive.nydailynews.com/nydn/js/require.js?r=2016LIST" defer></script>
       
@@ -169,8 +169,8 @@ if ( isset($_GET['quote']) ) {
 
         <ul class="ra-share" id="ra-share-top">
             <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/jaden-smith-tweets/">facebook</a> </li>
-            <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=In honor of @officialjaden’s 20th birthday find which Jaden tweet guides your life&url=SHORTURL&related=nydni,">Tweet</a></li>
-            <li class="ra-share-e"> <a href="mailto:?subject=Find which Jaden Smith tweet guides your life&body=http://interactive.nydailynews.com/project/game-of-thrones-house/">email</a> </li>
+            <li class="ra-share-t"> <a target="_blank" href="https://twitter.com/intent/tweet?text=In honor of @officialjaden’s 20th birthday find which Jaden tweet guides your life&url=https://nydn.us/jaden&via=nydni&related=officialjaden,nydni">Tweet</a></li>
+            <li class="ra-share-e"> <a href="mailto:?subject=Find which Jaden Smith tweet guides your life&body=http://interactive.nydailynews.com/project/jaden-smith-tweets/">email</a> </li>
         </ul>
     
         <p id="datestamp" class="stamp">Published July 8, 2018</p>
@@ -274,8 +274,8 @@ if ( isset($_GET['quote']) ) {
             <img id="jaden-smith" alt="A photo of Jaden Smith">
             <div>
                 <blockquote id="quoted"></blockquote>
-                <p id="asterisk" class="hide"><span>*</span> Jaden didn't actually write this</p>
-                <p id="url" class="hide"></p>
+                <p id="asterisk" class="hide"><span>*</span> Jaden didn't actually write this&nbsp;</p>
+                <p id="url" class="hide">http://nydn.us/jaden&nbsp;</p>
             </div>
         </section>
 
@@ -290,300 +290,6 @@ if ( isset($_GET['quote']) ) {
     </article>
 </main>
 <style>
-.left-circle { 
-    position: absolute;
-    animation: circle-animation 27s infinite;
-}
-#j01 {
-    left: 200px;
-    width: 150px;
-}
-#j02 {
-    left: 250px;
-    top: 240px;
-    width: 90px;
-    transform: rotate(-47deg);
-}
-#j03 {
-    left: 210px;
-    top: 450px;
-    width: 50px;
-    transform: rotate(-27deg);
-}
-#j04 {
-    left: 110px;
-    width: 200px;
-    transform: rotate(35deg) scale(.3, .3);
-}
-@keyframes circle-animation {
-  10% {
-    -webkit-filter: sepia(0) saturate(2);
-  }
-  
-  30% {
-    transform: rotate(.05turn) scale(1.3, 1.3);
-  }
-  60% {
-    -webkit-filter: sepia(1) saturate(8);
-    transform: rotate(-.05turn);
-  }
-  90% {
-    -webkit-filter: sepia(0) saturate(2);
-  }
-}
-body {
-	background-color: transparent;
-}
-body:before {
-	background: white url('img/jaden-smith-initials-photos.png') no-repeat top 500px center;
-	background-size: contain;
-	background-size: 60%;
-	content: "";
-	opacity: 0.2;
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 2000px;
-}
-main {
-    background: url('img/jaden-smith-background-2018.png') repeat-x left top;
-    background-size: 500px;
-    padding-top: 125px;
-    position: relative;
-    top: -40px;
-}
-main:after {
-    background: url('img/jaden-smith-lofi.png') repeat-x left bottom;
-    background-size: auto;
-    content: " ";
-    width: 100%;
-    height: 400px;
-    position: absolute;
-    animation: footer-animation 7s infinite;
-}
-@keyframes footer-animation {
-	25% {
-		-webkit-filter: hue-rotate(0deg);
-		filter: hue-rotate(0deg);
-		-webkit-filter: grayscale(90%);
-		filter: grayscale(90%);
-	}
-	50% {
-		-webkit-filter: grayscale(0%);
-		filter: grayscale(0%);
-		-webkit-filter: hue-rotate(120deg);
-		filter: hue-rotate(120deg);
-	}
-	75% {
-		-webkit-filter: hue-rotate(240deg);
-		filter: hue-rotate(240deg);
-	}
-}
-body#nydailynews article {
-	background-color: transparent;
-    max-width: 824px;
-    margin: auto;
-    padding-bottom: 500px;
-    padding: 25px;
-}
-/*
-body#nydailynews article:before {
-    background: url('img/jaden-smith-2019.png') no-repeat left bottom;
-    background-size: 300px auto;
-    width: calc(100% - 424px);
-    width: 300px;
-    height: 600px;
-    content: " ";
-    position: absolute;
-    left: 50px;
-}
-body#nydailynews article:after {
-    background: url('img/jaden-smith-2018.png') no-repeat right bottom;
-    background-size: 400px auto;
-    width: 400px;
-    height: 600px;
-    content: " ";
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-*/
-article p {
-    font-family: "Open Sans", sans-serif;
-}
-article > p {
-    margin-left: 25px;
-    margin-right: 25px;
-}
-article h1 {
-    margin: auto;
-    border-top: none;
-    border-bottom: none;
-}
-article h1, #stage blockquote {
-    font-family: "Open Sans Condensed", sans-serif;
-    font-weight: bold;
-    letter-spacing: 0;
-}
-#ra-share-top {
-    height: 40px;
-    text-align: center;
-    margin-bottom: 0;
-}
-img#jaden-smith-profile {
-	width: 200px;
-	float: right;
-	margin: 5px;
-	transform: scaleX(-1);
-	filter: FlipH;
-	-ms-filter: "FlipH";
-}
-form {
-    margin: 10px auto;
-}
-form p {
-    text-align: center;
-    margin: 40px auto;
-}
-article select {
-    font-size: 14px;
-}
-input, select {
-    border: 2px solid #999;
-}
-#buttons {
-	margin: 15px auto;
-}
-.buttons {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-}
-button { 
-    margin: 5px;
-}
-button:hover { 
-    background-color: #81bbf7;
-}
-button:focus { 
-    background-color: #933400;
-}
-button:before, button:after { 
-    content: " - ";
-    color: #136DF8;
-}
-button:hover:before, button:hover:after { 
-    content: " - ";
-    color: #81bbf7;
-}
-button:focus:before, button:focus:after { 
-    content: " - ";
-    color: #933400;
-}
-.grid {
-	display: -ms-grid;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr;
-    -ms-grid-columns: 20% 80%;
-    -ms-grid-rows: 1fr;
-    align-content: space-evenly;
-}
-#stage {
-    border: 4px solid #81bbf7;
-    background-color: white;
-}
-#stage img {
-    width: 200px;
-    position: relative;
-    left: -20px;
-    align-self: end;
-	-ms-grid-column: 1;
-	-ms-grid-row: 1;
-}
-#stage > div {
-	-ms-grid-column: 2;
-	-ms-grid-row: 1;
-}
-#stage blockquote:before {
-    content: "“";
-    color: #81bbf7;
-    position: absolute;
-    font-size: 192px;
-    margin-top: -5px;
-    margin-left: 1px;
-}
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
-	#stage blockquote:before {
-		margin-top: -71px;
-	}
-}
-#stage blockquote {
-    margin: 80px 0 40px 60px;
-    color: black;
-    font-size: 48px;
-    line-height: 44px;
-    width: calc(100% - 90px);
-    padding: 10px 0;
-}
-#stage blockquote span, #stage p span {
-    color: red;
-    font-size: 60px;
-}
-#stage p span { font-size: 30px; }
-#stage p {
-    text-align: right;
-}
-.hide {
-    display: none;
-}
-
-/* HANDHELD-SPECIFIC */
-@media only screen and ( min-width: 220px ) and ( max-width:727px ) {
-	img#jaden-smith-profile {
-		width: 100px;
-	}
-	form p {
-		font-size: 26px;
-	}
-	.buttons button {
-		font-size: 20px;
-	}
-	#stage blockquote {
-		font-size: 23px;
-		line-height: 22px;
-	}
-	#stage img {
-	    width: 150px;
-	}
-	#stage p {
-		float: right;
-		width: 200px;
-		line-height: 18px;
-	}
-	#stage blockquote span, #stage p span {
-		font-size: 26px;
-	}
-}
-
-/* TABLET-SPECIFIC */
-@media only screen and ( min-width: 728px ) and (max-width:1023px) {
-}
-/* HANDHELD & TABLET */
-@media only screen and ( min-width: 220px ) and (max-width:1023px) {
-	body:before {
-		background-size: contain;
-	}
-	body#nydailynews article:before, body#nydailynews article:after {
-		background-image: unset;
-	}
-	article h1 {
-		line-height: 40px;
-	}
-	#stage blockquote {
-		margin-left: 65px;
-	}
-}
 </style>
 <script>
 var jdn = {
@@ -876,7 +582,7 @@ var jdn = {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
 		}
 		else if ( destination == 'twitter' ) {
-			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&related=nydni';
+			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&via=nydni&related=officialjaden,nydni';
 		}
 		else if ( destination == 'facebook' ) {
 			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
