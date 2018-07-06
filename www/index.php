@@ -1,3 +1,57 @@
+<?php
+$share_img = 'CANONICALimg/share.png';
+$url_append = '';
+if ( isset($_GET['quote'])  && isset($_GET['quote_id']) ) {
+	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4) . '&quote_id=' + intval($_GET['quote_id']);
+	$quote_images = ["pic.twitter.com/v1cX31FeaT",
+        "pic.twitter.com/xJ9KwppAxI",
+        "pic.twitter.com/xBjyzFP0Dy",
+        "pic.twitter.com/MYsate1GIh",
+        "pic.twitter.com/tXSqt5G0ov",
+        "pic.twitter.com/RDfI7AdM58",
+        "pic.twitter.com/Z2rIsq0Wjo",
+        "pic.twitter.com/m7CwUVfayq",
+        "pic.twitter.com/RRuG0BUddT",
+        "pic.twitter.com/3dBm0wBoj1",
+        "pic.twitter.com/Lb6tPsECJi",
+        "pic.twitter.com/3p4VZYIgf9",
+        "pic.twitter.com/uZd2oLQ3Ol",
+        "pic.twitter.com/1WZZYLxs6Z",
+        "pic.twitter.com/fouLYhCmIB",
+        "pic.twitter.com/wxrrzen4cx",
+        "pic.twitter.com/z4Bd0fhOLE",
+        "pic.twitter.com/rC2XBD9TeJ",
+        "pic.twitter.com/V3B4rrwUd7",
+        "pic.twitter.com/eHmOHbR4gY",
+        "pic.twitter.com/89vwxuLqsw",
+        "pic.twitter.com/ZomDCCBd5g",
+        "pic.twitter.com/dRFLA6exWM",
+        "pic.twitter.com/YDO9qjzKmu",
+        "pic.twitter.com/BIaKdUE3bC",
+        "pic.twitter.com/NbNVUgIrjT",
+        "pic.twitter.com/i5pgoQonUK",
+        "pic.twitter.com/WzMJRna5ck",
+        "pic.twitter.com/ong9xOq2mC",
+        "pic.twitter.com/of0SRD2Aoe",
+        "pic.twitter.com/RertnOo4yJ",
+        "pic.twitter.com/tGF5y7WkWF",
+        "pic.twitter.com/hnzQOtUxTU",
+        "pic.twitter.com/lELWPjDaBM",
+        "pic.twitter.com/bAb0K4aanz",
+        "pic.twitter.com/mJxz46ZzMD",
+        "pic.twitter.com/Pv1KvT1pLe",
+        "pic.twitter.com/Jw5rSsgwCm",
+        "pic.twitter.com/P4pVd10UiR",
+        "pic.twitter.com/3FqMvq7hxk",
+        "pic.twitter.com/bkX7t25r1M",
+        "pic.twitter.com/c43t2nIcMz",
+        "pic.twitter.com/nx2il9Ajgd",
+        "pic.twitter.com/T0mmP1TSlr",
+        "pic.twitter.com/zynpQgBUO5",
+        "pic.twitter.com/37GdEGfJ7Z"];
+	$share_img = 'https://' . $quote_images[intval($_GET['quote_id'])];
+}
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -21,15 +75,15 @@
     <meta name="twitter:description" content="DESC" />
 
     <!-- KEYWORD -->
-    <meta name="keywords" content="TAGS" />
+    <meta name="keywords" content="Jaden Smith,Jaden Smith twitter,Jaden Smith twitter generator" />
 
     <!-- LINK -->
-    <link rel="canonical" href="CANONICAL">
-    <meta property="og:url" content="CANONICAL" />
-    <meta name="twitter:url" content="CANONICAL" />
+	<link rel="canonical" href="CANONICAL<?php echo $url_append; ?>">
+	<meta property="og:url" content="CANONICAL<?php echo $url_append; ?>" />
+	<meta name="twitter:url" content="CANONICAL<?php echo $url_append; ?>" />
 
     <!-- THUMBNAIL IMAGE-->
-    <meta property="og:image" content="CANONICALimg/share.png" />
+	<meta property="og:image" content="<?php echo $share_img; ?>" />
     <meta name="twitter:image" content="CANONICALimg/share.png" />
     <meta name="twitter:image:alt" content="A description of the twitter image" />
     <meta property="og:image:width" content="1024" />
@@ -46,7 +100,7 @@
             "dateCreated": "2018-07-06T06:00:00Z",
             "articleSection": "Interactive",
             "creator": ["Interactive Project", "Chase Gaewski", "Joe Murphy", "Spencer Dukoff"],
-            "keywords": ["interactive project","interactive","jaden smith"]
+            "keywords": ["interactive project","interactive","jaden smith","twitter","jaden smith tweets"]
         }
     </script>
 
@@ -208,7 +262,7 @@
             <button onClick="jdn.share('twitter');" id="share-twitter" class="hide">Tweet This</button>
             <button onClick="jdn.share('facebook');" id="share-facebook" class="hide">Facebook This</button>
         </div>
-        <section id="stage" class="hide">
+        <section id="stage" class="hide" style="margin-bottom:25px;">
             <img id="jaden-smith" alt="A photo of Jaden Smith">
             <div>
                 <blockquote id="quoted"></blockquote>
@@ -653,11 +707,11 @@ var jdn = {
     },
     share: function(destination) {
         // Put together the URL and deliver to the appropriate share place: email, twitter or facebook.
-		var quote_id;
-		if ( document.location.hash !== '' ) quote_id = document.location.hash.substr(1);
-		if ( document.location.search !== '' ) quote_id = document.location.replace('?quote=','');
-        var url_hash = document.location.origin + document.location.pathname + '#' + quote_id;
-        var url_search = document.location.origin + document.location.pathname + '?' + quote_id;
+		var quote;
+		if ( document.location.hash !== '' ) quote = document.location.hash.substr(1);
+		if ( document.location.search !== '' ) quote = document.location.replace('?quote=','');
+        var url_hash = document.location.origin + document.location.pathname + '#' + quote;
+        var url_search = document.location.origin + document.location.pathname + '?quote=' + quote + '&quote_id=' + this.quote_id;
 
 		if ( destination === 'email' ) {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
