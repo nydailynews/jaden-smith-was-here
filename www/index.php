@@ -3,52 +3,52 @@ $share_img = 'http://interactive.nydailynews.com/project/jaden-smith-tweets/img/
 $url_append = '';
 if ( isset($_GET['quote']) ) {
 	$url_append = '?quote=' . substr(htmlspecialchars($_GET['quote']), 0, 4);
-	$quote_images = ["pic.twitter.com/v1cX31FeaT",
-        "pic.twitter.com/xJ9KwppAxI",
-        "pic.twitter.com/xBjyzFP0Dy",
-        "pic.twitter.com/MYsate1GIh",
-        "pic.twitter.com/tXSqt5G0ov",
-        "pic.twitter.com/RDfI7AdM58",
-        "pic.twitter.com/Z2rIsq0Wjo",
-        "pic.twitter.com/m7CwUVfayq",
-        "pic.twitter.com/RRuG0BUddT",
-        "pic.twitter.com/3dBm0wBoj1",
-        "pic.twitter.com/Lb6tPsECJi",
-        "pic.twitter.com/3p4VZYIgf9",
-        "pic.twitter.com/uZd2oLQ3Ol",
-        "pic.twitter.com/1WZZYLxs6Z",
-        "pic.twitter.com/fouLYhCmIB",
-        "pic.twitter.com/wxrrzen4cx",
-        "pic.twitter.com/z4Bd0fhOLE",
-        "pic.twitter.com/rC2XBD9TeJ",
-        "pic.twitter.com/V3B4rrwUd7",
-        "pic.twitter.com/eHmOHbR4gY",
-        "pic.twitter.com/89vwxuLqsw",
-        "pic.twitter.com/ZomDCCBd5g",
-        "pic.twitter.com/dRFLA6exWM",
-        "pic.twitter.com/YDO9qjzKmu",
-        "pic.twitter.com/BIaKdUE3bC",
-        "pic.twitter.com/NbNVUgIrjT",
-        "pic.twitter.com/i5pgoQonUK",
-        "pic.twitter.com/WzMJRna5ck",
-        "pic.twitter.com/ong9xOq2mC",
-        "pic.twitter.com/of0SRD2Aoe",
-        "pic.twitter.com/RertnOo4yJ",
-        "pic.twitter.com/tGF5y7WkWF",
-        "pic.twitter.com/hnzQOtUxTU",
-        "pic.twitter.com/lELWPjDaBM",
-        "pic.twitter.com/bAb0K4aanz",
-        "pic.twitter.com/mJxz46ZzMD",
-        "pic.twitter.com/Pv1KvT1pLe",
-        "pic.twitter.com/Jw5rSsgwCm",
-        "pic.twitter.com/P4pVd10UiR",
-        "pic.twitter.com/3FqMvq7hxk",
-        "pic.twitter.com/bkX7t25r1M",
-        "pic.twitter.com/c43t2nIcMz",
-        "pic.twitter.com/nx2il9Ajgd",
-        "pic.twitter.com/T0mmP1TSlr",
-        "pic.twitter.com/zynpQgBUO5",
-        "pic.twitter.com/37GdEGfJ7Z"];
+	$quote_images = ["https://pbs.twimg.com/media/DhbinlhW4AARELo.png",
+        "https://pbs.twimg.com/media/Dhbivm5W4AA5Ao-.png",
+        "https://pbs.twimg.com/media/DhbuXSfUEAA3sL6.png",
+        "https://pbs.twimg.com/media/DhbwLjSVAAEIU5W.png",
+        "https://pbs.twimg.com/media/DhbuEs-VQAAcmMA.png",
+        "https://pbs.twimg.com/media/DhbsY7pU8AA9j5x.png",
+        "https://pbs.twimg.com/media/Dhbs0AiU8AANYhf.png",
+        "https://pbs.twimg.com/media/DhbqttyUwAAjeAK.png",
+        "https://pbs.twimg.com/media/DhbuvzVUEAEkE9k.png",
+        "https://pbs.twimg.com/media/DhbwUS7VAAI6ty6.png",
+        "https://pbs.twimg.com/media/Dhbul5OVQAAkw4u.png",
+        "https://pbs.twimg.com/media/DhbpCRzUYAAHIc6.png",
+        "https://pbs.twimg.com/media/DhbtQj-V4AUylQb.png",
+        "https://pbs.twimg.com/media/DhbsChpVMAAftV_.png",
+        "https://pbs.twimg.com/media/Dhbs9ldV4AAlekc.png",
+        "https://pbs.twimg.com/media/DhbpYDBVQAIHUtB.png",
+        "https://pbs.twimg.com/media/DhbshvQU0AEhtSu.png",
+        "https://pbs.twimg.com/media/DhbviSUU8AAhVh6.png",
+        "https://pbs.twimg.com/media/DhbqhggV4AAbubR.png",
+        "https://pbs.twimg.com/media/DhbtkXpVAAA1--d.png",
+        "https://pbs.twimg.com/media/DhbrmoJU0AEPuGQ.png",
+        "https://pbs.twimg.com/media/DhbvZK4VAAAN9rh.png",
+        "https://pbs.twimg.com/media/DhbsRCFVQAEr0qf.png",
+        "https://pbs.twimg.com/media/DhbrS60UwAA4Ytx.png",
+        "https://pbs.twimg.com/media/DhbtbYcVMAE5gQf.png",
+        "https://pbs.twimg.com/media/Dhbp5MdVMAAc5Lo.png",
+        "https://pbs.twimg.com/media/Dhbqa9dVMAAKRcj.png",
+        "https://pbs.twimg.com/media/DhbuPIQVQAE_ZCB.png",
+        "https://pbs.twimg.com/media/DhbrfQfUwAAhYs-.png",
+        "https://pbs.twimg.com/media/DhbrvA8UwAA5ybz.png",
+        "https://pbs.twimg.com/media/DhbsIiTUwAI9VHK.png",
+        "https://pbs.twimg.com/media/DhbwBaxU8AAZZ16.png",
+        "https://pbs.twimg.com/media/DhbsrvOVQAItiIl.png",
+        "https://pbs.twimg.com/media/DhbqCZgU8AIZO-n.png",
+        "https://pbs.twimg.com/media/DhbrJnCUwAALHmt.png",
+        "https://pbs.twimg.com/media/DhbxM7oU8AA1rvj.png",
+        "https://pbs.twimg.com/media/Dhbr3icUEAAHKAy.png",
+        "https://pbs.twimg.com/media/DhbpjXnUcAAVOap.png",
+        "https://pbs.twimg.com/media/DhbvFNVVQAAzMom.png",
+        "https://pbs.twimg.com/media/DhbpypMV4AAdTUw.png",
+        "https://pbs.twimg.com/media/DhbouTjUEAAT39S.png",
+        "https://pbs.twimg.com/media/DhbrAy0U0AIWrjD.png",
+        "https://pbs.twimg.com/media/Dhbu6e-U0AErDlP.png",
+        "https://pbs.twimg.com/media/Dhbq3MYVQAENTuq.png",
+        "https://pbs.twimg.com/media/DhbtGsqV4AELGwf.png",
+        "https://pbs.twimg.com/media/DhbxkGQVMAAQHPk.png"];
 	$quote_index = intval($_GET['quote']) % count($quote_images);
 	$share_img = 'https://' . $quote_images[intval($_GET['quote_index'])];
 }
@@ -188,12 +188,6 @@ if ( isset($_GET['quote']) ) {
 			Enter your birthday below to reach peak Jaden Smith Twitter enlightenment:
 			</strong>
         </p>
-<!--
-        <img src="img/jaden-circle.png" alt="" id="j01" class="left-circle">
-        <img src="img/jaden-circle.png" alt="" id="j02" class="left-circle">
-        <img src="img/jaden-circle.png" alt="" id="j03" class="left-circle">
-        <img src="img/jaden-circle.png" alt="" id="j04" class="left-circle">
--->
         <form id="interface" action="#" method="GET" onSubmit="return false;">
             <p>
                 <label for="birth-month">Your birth month</label>
@@ -575,7 +569,7 @@ var jdn = {
 		if ( document.location.hash !== '' ) quote = document.location.hash.substr(1);
 		if ( document.location.search !== '' ) quote = document.location.replace('?quote=','');
         var url_hash = document.location.origin + document.location.pathname + '#' + quote;
-        var url_search = document.location.origin + document.location.pathname + '?quote=' + quote;
+        var url_search = encodeURI(document.location.origin + document.location.pathname + '?quote=' + quote);
 		console.log(url_hash, url_search);
 
 		if ( destination === 'email' ) {
