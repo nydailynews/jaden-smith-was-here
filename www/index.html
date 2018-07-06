@@ -200,6 +200,14 @@
             </div>
         </div>
 
+        <div class="buttons">
+            <button onClick="jdn.save();" id="save" class="hide">Save</button>
+            <button onClick="jdn.rando();" id="rando" class="hide">Random</button>
+            <button onClick="jdn.truly_rando();" id="truly_rando" class="hide">Truly Random</button>
+            <button onClick="jdn.share('email');" id="share-email" class="hide">Email This</button>
+            <button onClick="jdn.share('twitter');" id="share-twitter" class="hide">Tweet This</button>
+            <button onClick="jdn.share('facebook');" id="share-facebook" class="hide">Facebook This</button>
+        </div>
         <p id="blurb" class="hide">
             You are a<span id="n"></span> <span id="sun-sign" class="sign">aries</span> in your sun sign and a <span id="moon-sign" class="sign">virgo</span> in your moon sign
             and this is the tweet that is definitely your life from now on:
@@ -212,14 +220,6 @@
                 <p id="url" class="hide"></p>
             </div>
         </section>
-        <div class="buttons">
-            <button onClick="jdn.save();" id="save" class="hide">Save</button>
-            <button onClick="jdn.rando();" id="rando" class="hide">Random</button>
-            <button onClick="jdn.truly_rando();" id="truly_rando" class="hide">Truly Random</button>
-            <button onClick="jdn.share('email');" id="share-email" class="hide">Email This</button>
-            <button onClick="jdn.share('twitter');" id="share-twitter" class="hide">Tweet This</button>
-            <button onClick="jdn.share('facebook');" id="share-facebook" class="hide">Facebook This</button>
-        </div>
 
         <div class="ad center">
             <div id='div-gpt-ad-1423507761396-3'>
@@ -449,6 +449,54 @@ var jdn = {
         }
         return true;
     },
+    image: [
+        "pic.twitter.com/v1cX31FeaT",
+        "pic.twitter.com/xJ9KwppAxI",
+        "pic.twitter.com/xBjyzFP0Dy",
+        "pic.twitter.com/MYsate1GIh",
+        "pic.twitter.com/tXSqt5G0ov",
+        "pic.twitter.com/RDfI7AdM58",
+        "pic.twitter.com/Z2rIsq0Wjo",
+        "pic.twitter.com/m7CwUVfayq",
+        "pic.twitter.com/RRuG0BUddT",
+        "pic.twitter.com/3dBm0wBoj1",
+        "pic.twitter.com/Lb6tPsECJi",
+        "pic.twitter.com/3p4VZYIgf9",
+        "pic.twitter.com/uZd2oLQ3Ol",
+        "pic.twitter.com/1WZZYLxs6Z",
+        "pic.twitter.com/fouLYhCmIB",
+        "pic.twitter.com/wxrrzen4cx",
+        "pic.twitter.com/z4Bd0fhOLE",
+        "pic.twitter.com/rC2XBD9TeJ",
+        "pic.twitter.com/V3B4rrwUd7",
+        "pic.twitter.com/eHmOHbR4gY",
+        "pic.twitter.com/89vwxuLqsw",
+        "pic.twitter.com/ZomDCCBd5g",
+        "pic.twitter.com/dRFLA6exWM",
+        "pic.twitter.com/YDO9qjzKmu",
+        "pic.twitter.com/BIaKdUE3bC",
+        "pic.twitter.com/NbNVUgIrjT",
+        "pic.twitter.com/i5pgoQonUK",
+        "pic.twitter.com/WzMJRna5ck",
+        "pic.twitter.com/ong9xOq2mC",
+        "pic.twitter.com/of0SRD2Aoe",
+        "pic.twitter.com/RertnOo4yJ",
+        "pic.twitter.com/tGF5y7WkWF",
+        "pic.twitter.com/hnzQOtUxTU",
+        "pic.twitter.com/lELWPjDaBM",
+        "pic.twitter.com/bAb0K4aanz",
+        "pic.twitter.com/mJxz46ZzMD",
+        "pic.twitter.com/Pv1KvT1pLe",
+        "pic.twitter.com/Jw5rSsgwCm",
+        "pic.twitter.com/P4pVd10UiR",
+        "pic.twitter.com/3FqMvq7hxk",
+        "pic.twitter.com/bkX7t25r1M",
+        "pic.twitter.com/c43t2nIcMz",
+        "pic.twitter.com/nx2il9Ajgd",
+        "pic.twitter.com/T0mmP1TSlr",
+        "pic.twitter.com/zynpQgBUO5",
+        "pic.twitter.com/37GdEGfJ7Z",
+    ],
     data: [
         "Ocean 8 Is Fire.",
         "The Biggest Flex Anyone will Ever Have Is Dying.",
@@ -538,6 +586,7 @@ var jdn = {
         if ( this.next > 0 ) {
             quote_index = this.next;
             this.next += 1;
+            document.location.hash = '#n' + this.next;
         }
         var qt = document.getElementById('quoted');
         qt.textContent = this.data[quote_index];
@@ -649,7 +698,7 @@ var jdn = {
         }
     },
     init: function(config) {
-        this.config.quote_l = this.data.length - 1;
+        this.config.quote_l = this.data.length;
         //this.trippy_interval = window.setInterval(this.trippy(), 1 * jdn.cell_length);
         this.trippy();
         window.setInterval(this.trippy, 20000);
