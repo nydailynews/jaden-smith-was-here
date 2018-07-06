@@ -452,6 +452,9 @@ article select {
 input, select {
     border: 2px solid #999;
 }
+#buttons {
+	margin: 15px auto;
+}
 .buttons {
     max-width: 600px;
     margin: auto;
@@ -769,6 +772,16 @@ var jdn = {
 		var isIOSChrome = winNav.userAgent.match("CriOS");
 
 		if ( isIOSChrome ) document.getElementById('save').setAttribute('class', '');
+		else if (
+			isChromium !== null &&
+			typeof isChromium !== "undefined" &&
+			vendorName === "Google Inc." &&
+			isOpera === false &&
+			isIEedge === false
+		) {
+			// Is Google Chrome
+			document.getElementById('save').setAttribute('class', '');
+		}
 
         var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
