@@ -208,10 +208,6 @@
             <button onClick="jdn.share('twitter');" id="share-twitter" class="hide">Tweet This</button>
             <button onClick="jdn.share('facebook');" id="share-facebook" class="hide">Facebook This</button>
         </div>
-        <p id="blurb" class="hide">
-            You are a<span id="n"></span> <span id="sun-sign" class="sign">aries</span> in your sun sign and a <span id="moon-sign" class="sign">virgo</span> in your moon sign
-            and this is the tweet that is definitely your life from now on:
-        </p>
         <section id="stage" class="hide">
             <img id="jaden-smith" alt="A photo of Jaden Smith">
             <div>
@@ -449,7 +445,7 @@ var jdn = {
         }
         return true;
     },
-    image: [
+    quote_image: [
         "pic.twitter.com/v1cX31FeaT",
         "pic.twitter.com/xJ9KwppAxI",
         "pic.twitter.com/xBjyzFP0Dy",
@@ -588,6 +584,7 @@ var jdn = {
             this.next += 1;
             document.location.hash = '#n' + this.next;
         }
+		this.quote_index = quote_index;
         var qt = document.getElementById('quoted');
         qt.textContent = this.data[quote_index];
 
@@ -604,10 +601,7 @@ var jdn = {
         document.getElementById('share-email').setAttribute('class', '');
         document.getElementById('share-twitter').setAttribute('class', '');
         document.getElementById('share-facebook').setAttribute('class', '');
-        document.getElementById('blurb').setAttribute('class', '');
         document.getElementById('asterisk').setAttribute('class', 'hide');
-
-        this.set_signs('' + index);
 
         var t = document.getElementById('stage').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
@@ -659,7 +653,21 @@ var jdn = {
     },
     share: function(destination) {
         // Put together the URL and deliver to the appropriate share place: email, twitter or facebook.
-        var url = '';
+		var quote_id;
+		if ( document.location.hash !== '' ) quote_id = document.location.hash.substr(1);
+		if ( document.location.search !== '' ) quote_id = document.location.replace('?quote=','');
+        var url_hash = document.location.origin + document.location.pathname + '#' + quote_id;
+        var url_search = document.location.origin + document.location.pathname + '?' + quote_id;
+
+		if ( destination === 'email' ) {
+			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
+		}
+		else if ( destination == 'twitter' ) {
+			window.document.location = 'https://twitter.com/intent/tweet?text=Ayyyyyyy + ' + this.quote_image[this.quote_index] + '&url=' + url_hash + '&related=nydni';
+		}
+		else if ( destination == 'facebook' ) {
+			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
+		}
     },
     cell_length: 5 * 1000,
     trippy: function() {
@@ -704,7 +712,7 @@ var jdn = {
         window.setInterval(this.trippy, 20000);
 
         if ( document.location.hash !== '' ) this.load_permalink(document.location.hash.substr(1));
-        if ( document.location.search !== '' ) this.load_permalink(document.location.search.replace('quote=',''));
+        if ( document.location.search !== '' ) this.load_permalink(document.location.search.replace('?quote=',''));
     }
 };
 jdn.init();
