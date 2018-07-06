@@ -700,6 +700,8 @@ var jdn = {
         "Females Are Amazing.",
         ],
     next: 0,
+    count: 0,
+    ad: 0,
     sun_signs: [],
     moon_signs: [],
     lookup_sun_sign: function(monthday) {
@@ -786,6 +788,33 @@ var jdn = {
         var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
         window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
+
+		// AD REFRESH AND SUCH
+		this.count += 1;
+
+		if ( this.count % 10 == 0 ) {
+			//$('#motto-image, #house-name, #motto').addClass('hide');
+			//$('#ad' + this.ad).removeClass('hide');
+			//return true;
+		}
+		if ( this.count > 1 && this.count % 10 == 1 ) {
+			//$('#ad' + ad).addClass('hide');
+			//$('#motto-image, #house-name, #motto').removeClass('hide');
+			this.ad += 1;
+			if ( this.ad > 3 ) this.ad = 1;
+			// AD REFRESH
+			if ( this.count % 30 == 1 ) googletag.pubads().refresh();
+		}
+		if ( this.count % 10 == 0 ) {
+			// Add a PV
+			if ( typeof PARSELY !== 'undefined' ) {
+				PARSELY.beacon.trackPageView({
+					url: document.location.href,
+					urlref: document.location.href,
+					js: 1
+				});
+			}
+		}
 		return false;
     },
     save: function() {
