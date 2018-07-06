@@ -513,9 +513,6 @@ button:focus:before, button:focus:after {
 	#stage blockquote span, #stage p span {
 		font-size: 26px;
 	}
-	body#nydailynews article:before, body#nydailynews article:after {
-		background-url: unset;
-	}
 }
 
 /* TABLET-SPECIFIC */
@@ -523,6 +520,9 @@ button:focus:before, button:focus:after {
 }
 /* HANDHELD & TABLET */
 @media only screen and ( min-width: 220px ) and (max-width:1023px) {
+	body#nydailynews article:before, body#nydailynews article:after {
+		background-image: unset;
+	}
 }
 </style>
 <script>
