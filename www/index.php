@@ -93,9 +93,7 @@ if ( isset($_GET['quote']) ) {
     <meta name="twitter:image" content="http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-twitter-share.jpg" />
     <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
     <meta property="og:image:width" content="774" />
-	<!--
-    <meta property="og:image:height" content="512" />
-	-->
+    <meta property="og:image:height" content="272" />
     <meta name="twitter:image:alt" content="JAAAAAAADEN SMITH" />
     <meta name="og:image:alt" content="JAAAAAAADEN SMITH" />
 
@@ -586,7 +584,7 @@ var jdn = {
 			window.document.location = 'mailto:?subject=This Jaden Smith Tweet Is Your Life&body=' + url_hash;
 		}
 		else if ( destination == 'twitter' ) {
-			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_share + '&via=nydni&related=officialjaden,nydni';
+			window.document.location = 'https://twitter.com/intent/tweet?text=This is the @officialjaden tweet that guides my life ' + this.quote_image[this.quote_index] + '&url=' + url_search + '&via=nydni&related=officialjaden,nydni';
 		}
 		else if ( destination == 'facebook' ) {
 			window.document.location = 'https://www.facebook.com/sharer/sharer.php?u=' + url_search;
@@ -594,7 +592,7 @@ var jdn = {
     },
     load_permalink: function(birthday) {
         // Load a saved image.
-        if ( +birthday < 1000 ) {
+        if ( +birthday < 1300 ) {
             // birthday will be a string that looks something like "0321" or "1001" or maybe "506".
             // The last two characters are the date, the other character(s) is the month.
             this.make(+birthday);
