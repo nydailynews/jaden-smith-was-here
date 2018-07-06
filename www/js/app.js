@@ -28,6 +28,9 @@ var markov = {
             }
         }
         if ( title[title.length - 1] === 'In' ) title.splice(-1, 1);
+        if ( title[title.length - 1] === 'Of' ) title.splice(-1, 1);
+        if ( title[title.length - 1] === 'For' ) title.splice(-1, 1);
+        if ( title[title.length - 1] === 'It' ) title.splice(-1, 1);
 
         if (title.length < min) return this.make_title(min, max);
         if (title.length > max) return this.make_title(min, max);

@@ -517,11 +517,11 @@ button:focus:before, button:focus:after {
 	}
 }
 #stage blockquote {
+    margin: 80px 0 40px 60px;
     color: black;
     font-size: 48px;
     line-height: 44px;
     width: calc(100% - 90px);
-    margin: 80px 0 40px 60px;
     padding: 10px 0;
 }
 #stage blockquote span, #stage p span {
@@ -577,6 +577,9 @@ button:focus:before, button:focus:after {
 	}
 	article h1 {
 		line-height: 40px;
+	}
+	#stage blockquote {
+		margin-left: 65px;
 	}
 }
 </style>
@@ -749,13 +752,23 @@ var jdn = {
         document.getElementById('stage').setAttribute('class', 'grid');
         document.getElementById('stage').setAttribute('role', '');
         document.getElementById('stage').setAttribute('role', 'alert');
-        document.getElementById('save').setAttribute('class', '');
         document.getElementById('rando').setAttribute('class', '');
         document.getElementById('truly_rando').setAttribute('class', '');
         document.getElementById('share-email').setAttribute('class', '');
         document.getElementById('share-twitter').setAttribute('class', '');
         document.getElementById('share-facebook').setAttribute('class', '');
         document.getElementById('asterisk').setAttribute('class', 'hide');
+
+		// I'm truly sorry.
+		// Cribbed from https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
+		var isChromium = window.chrome;
+		var winNav = window.navigator;
+		var vendorName = winNav.vendor;
+		var isOpera = typeof window.opr !== "undefined";
+		var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+		var isIOSChrome = winNav.userAgent.match("CriOS");
+
+		if ( isIOSChrome ) document.getElementById('save').setAttribute('class', '');
 
         var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
@@ -790,8 +803,8 @@ var jdn = {
 		//.then( function(canvas) { document.body.appendChild(canvas) });
     },
     rando: function() {
-        var m = Math.floor(Math.random() * 11) + 1;
-        var d = Math.floor(Math.random() * 30) + 1;
+        var m = Math.round(Math.random() * 11) + 1;
+        var d = Math.round(Math.random() * 30) + 1;
         if ( d < 10 ) d = "0" + d;
         this.make("" + m + d);
     },
