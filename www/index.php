@@ -262,7 +262,7 @@ if ( isset($_GET['quote']) ) {
             </div>
         </div>
 
-        <div class="buttons">
+        <div class="buttons" id="buttons">
             <button onClick="jdn.save();" id="save" class="hide">Save</button>
             <button onClick="jdn.rando();" id="rando" class="hide">Random</button>
             <button onClick="jdn.truly_rando();" id="truly_rando" class="hide">Truly Random</button>
@@ -505,6 +505,14 @@ button:focus:before, button:focus:after {
 	#stage img {
 	    width: 150px;
 	}
+	#stage p {
+		float: right;
+		width: 200px;
+		line-height: 18px;
+	}
+	#stage blockquote span, #stage p span {
+		font-size: 26px;
+	}
 	body#nydailynews article:before, body#nydailynews article:after {
 		background-url: unset;
 	}
@@ -692,7 +700,7 @@ var jdn = {
         document.getElementById('share-facebook').setAttribute('class', '');
         document.getElementById('asterisk').setAttribute('class', 'hide');
 
-        var t = document.getElementById('stage').offsetTop;
+        var t = document.getElementById('buttons').offsetTop;
         window.scrollTo({top: t, behavior: 'smooth' });
         window.history.replaceState('', '', document.location.origin + document.location.pathname + '#' + index);
     },
