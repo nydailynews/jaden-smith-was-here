@@ -1,5 +1,5 @@
 <?php
-$share_img = 'http://interactive.nydailynews.com/project/jaden-smith-tweets/img/share.png';
+$share_img = 'http://interactive.nydailynews.com/project/jaden-smith-tweets/img/jaden-smith-twitter-share.jpg';
 $url_append = '';
 $title = 'Which Jaden Smith tweet is the story of your life?';
 $desc = 'We can’t all afford to have a guru deliver daily wisdom. Good thing Jaden Smith’s tweets are free.';
